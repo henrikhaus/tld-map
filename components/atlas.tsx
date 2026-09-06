@@ -1,6 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from './atlas-link';
 import { useRouter } from 'next/navigation';
 import {
   mapPath,
@@ -433,6 +433,14 @@ function AtlasWorkspace({
             {runControls}
             <div className="sidebar-region-list">
               <Link
+                href="/"
+                className={`world-link ${view === 'map' && selectedMap === 'game-world' ? 'selected' : ''}`}
+                onClick={() => setSidebarOpen(false)}
+              >
+                <Compass />
+                World map
+              </Link>
+              <Link
                 href={viewPath('loot')}
                 className={`sidebar-page-link ${view === 'loot' ? 'selected' : ''}`}
                 aria-current={view === 'loot' ? 'page' : undefined}
@@ -442,14 +450,6 @@ function AtlasWorkspace({
               >
                 <BookOpen size={17} />
                 Loot tables
-              </Link>
-              <Link
-                href="/"
-                className={`world-link ${view === 'map' && selectedMap === 'game-world' ? 'selected' : ''}`}
-                onClick={() => setSidebarOpen(false)}
-              >
-                <Compass />
-                World map
               </Link>
               <Link
                 href={viewPath('notes')}
@@ -509,12 +509,6 @@ function AtlasWorkspace({
                     <Shield size={15} /> Site admin
                   </button>
                 )}
-                <button
-                  className="text-button"
-                  onClick={() => setModal('report')}
-                >
-                  <MessageSquarePlus size={15} /> Issue / feature request
-                </button>
                 <Link
                   className="text-button"
                   href="/privacy"
@@ -522,6 +516,12 @@ function AtlasWorkspace({
                 >
                   Privacy
                 </Link>
+                <button
+                  className="text-button"
+                  onClick={() => setModal('report')}
+                >
+                  <MessageSquarePlus size={15} /> Issue / feature request
+                </button>
                 <button
                   className="text-button"
                   onClick={() => setModal('sources')}

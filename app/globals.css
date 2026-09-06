@@ -3793,6 +3793,11 @@ h1 {
 .sidebar-page-link.selected {
   color: #eee;
 }
+.sidebar-page-link:hover,
+.regions-panel .world-link:hover {
+  color: #fff;
+  background: #ffffff09;
+}
 .sidebar-page-link svg {
   flex-shrink: 0;
 }
@@ -3841,7 +3846,7 @@ h1 {
   flex-shrink: 0;
   align-items: flex-start;
   gap: 6px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 .sidebar-footer .charcoal-toggle {
   margin-left: -6px;
