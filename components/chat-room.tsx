@@ -216,7 +216,7 @@ function Message({
     </article>
   );
 }
-export default function ChatRoom() {
+export default function ChatRoom({ onSignIn }: { onSignIn: () => void }) {
   const [me, setMe] = useState<ChatMe | null>(null),
     [messages, setMessages] = useState<ChatMessage[]>([]),
     [body, setBody] = useState(''),
@@ -552,12 +552,18 @@ export default function ChatRoom() {
                 </strong>
                 {!me.admin && (
                   <button
+                    className="chat-username-color"
                     onClick={() => {
                       setColorOpen((v) => !v);
                     }}
                     disabled={!!me.restriction}
                   >
                     Username color
+                  </button>
+                )}
+                {me.anonymous && (
+                  <button className="chat-sign-in" onClick={onSignIn}>
+                    Sign in
                   </button>
                 )}
               </div>

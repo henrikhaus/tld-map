@@ -4755,6 +4755,16 @@ h1 {
   color: #888;
   font-size: 11px;
 }
+.chat-identity .chat-username-color {
+  margin-left: 14px;
+}
+.chat-identity .chat-sign-in {
+  color: #e99b50;
+}
+.chat-identity .chat-sign-in:hover,
+.chat-identity .chat-sign-in:focus-visible {
+  color: #ffbb78;
+}
 .chat-compose form {
   display: flex;
   align-items: flex-end;

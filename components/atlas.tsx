@@ -644,7 +644,7 @@ function AtlasWorkspace({
         ) : view === 'privacy' ? (
           <Privacy onContact={() => setModal('report')} />
         ) : view === 'chat' ? (
-          <ChatRoom />
+          <ChatRoom onSignIn={() => setModal('account')} />
         ) : view === 'admin' ? (
           isAdmin ? (
             <SiteAdmin />
@@ -839,15 +839,6 @@ function AtlasWorkspace({
             </div>
           </div>
           <div className="rule" />
-          <p>
-            All four loot sets, with location notes and community comments to
-            help plan your run.
-          </p>
-          <p className="mt-3">
-            The loot tables do not specify a game version. Community comments
-            are shown separately from location notes. Listed locations can be
-            alternatives, and random loot can occur outside the set system.
-          </p>
           <p className="mt-3">
             The Long Dark belongs to Hinterland Studio. This is an unofficial
             companion. Original credits remain on the maps.
