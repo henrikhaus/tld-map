@@ -10,6 +10,8 @@ ENV SITE_URL=$SITE_URL
 RUN bun run build:host
 
 FROM node:22-bookworm-slim AS runtime
+ARG SITE_URL=https://tld.henhau.online
+ENV SITE_URL=$SITE_URL
 COPY --from=bun-runtime /usr/local/bin/bun /usr/local/bin/bun
 WORKDIR /app
 ENV NODE_ENV=production PORT=3000 API_PORT=3001 WEB_PORT=3002 TLD_DATA_DIR=/data

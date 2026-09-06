@@ -119,6 +119,8 @@ export type Point = z.infer<typeof pointSchema>;
 export type LootEntry = (typeof rawLoot.entries)[number];
 export type MapAsset = {
   src: string;
+  previewSrc?: string;
+  originalSrc?: string;
   width: number;
   height: number;
   source: string;

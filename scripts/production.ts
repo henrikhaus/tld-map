@@ -1,14 +1,8 @@
 import { proxyClientIP, upstreamRequest } from '../server/proxy';
+import { appOrigin } from '../server/origin';
 
-const origin = process.env.APP_ORIGIN ?? 'http://localhost:3000';
+const origin = appOrigin({ ...process.env, NODE_ENV: 'production' });
 const publicURL = new URL(origin);
-if (
-  !['http:', 'https:'].includes(publicURL.protocol) ||
-  publicURL.pathname !== '/' ||
-  publicURL.search ||
-  publicURL.hash
-)
-  throw new Error('APP_ORIGIN must be a plain http(s) origin.');
 const apiPort = process.env.API_PORT ?? '3001';
 const webPort = process.env.WEB_PORT ?? '3002';
 const apiOrigin = `http://127.0.0.1:${apiPort}`;
@@ -72,7 +66,7 @@ const gateway = Bun.serve({
         server.requestIP(request)?.address ?? 'unknown',
         process.env.TRUST_PROXY === 'true',
       );
-      return await fetch(
+      const response = await fetch(
         upstreamRequest(
           request,
           path === '/api' || path.startsWith('/api/') ? apiOrigin : webOrigin,
@@ -80,6 +74,19 @@ const gateway = Bun.serve({
           clientIP,
         ),
       );
+      // Content-hashed map variants can be reused across visits and releases.
+      if (
+        /^\/maps\/optimized\/[a-f0-9]{20}(?:-preview)?\.webp$/.test(path) &&
+        response.ok
+      ) {
+        const headers = new Headers(response.headers);
+        headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+        return new Response(response.body, {
+          status: response.status,
+          headers,
+        });
+      }
+      return response;
     } catch {
       return new Response('Service temporarily unavailable', {
         status: 503,
@@ -106,6 +113,7 @@ async function stop(code: number) {
 process.on('SIGTERM', () => void stop(0));
 process.on('SIGINT', () => void stop(0));
 console.log(`Atlas gateway listening on port ${gateway.port}`);
+console.log(`Public site origin: ${origin}`);
 // Fail the container if either child exits so Docker can restart the whole service.
 await Promise.race(children.map((child) => child.exited));
 await stop(1);

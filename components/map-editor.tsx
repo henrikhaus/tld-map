@@ -1,4 +1,5 @@
 'use client';
+import MapImage from './map-image';
 import {
   useCallback,
   useEffect,
@@ -873,15 +874,10 @@ export default function MapEditor({
             transform: `translate(${view.x}px,${view.y}px) scale(${view.scale})`,
           }}
         >
-          {/* Full-resolution cartography must retain its original pixels and coordinates. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            key={retry}
-            src={asset.src}
-            width={asset.width}
-            height={asset.height}
-            alt="Detailed community region map for The Long Dark"
-            draggable={false}
+          {/* Previews share the original coordinate space; full detail loads behind them. */}
+          <MapImage
+            key={`${asset.src}:${retry}`}
+            asset={asset}
             onLoad={() => setLoaded(true)}
             onError={() => setFailed(true)}
           />

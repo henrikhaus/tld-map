@@ -1,380 +1,488 @@
 {
   "additions-&-changes": {
     "pilgrim": {
-      "src": "/maps/additions-&-changes-pilgrim.jpg",
+      "src": "/maps/optimized/364443b4325e30ddc34c.webp",
       "width": 1920,
       "height": 1080,
-      "source": "https://images.steamusercontent.com/ugc/13106430351921752409/189D98477A7FC608F28D6D698671F2C168A44D0D/"
+      "source": "https://images.steamusercontent.com/ugc/13106430351921752409/189D98477A7FC608F28D6D698671F2C168A44D0D/",
+      "previewSrc": "/maps/optimized/364443b4325e30ddc34c-preview.webp",
+      "originalSrc": "/maps/additions-&-changes-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/additions-&-changes-interloper.jpg",
+      "src": "/maps/optimized/364443b4325e30ddc34c.webp",
       "width": 1920,
       "height": 1080,
-      "source": "https://images.steamusercontent.com/ugc/13106430351921752409/189D98477A7FC608F28D6D698671F2C168A44D0D/"
+      "source": "https://images.steamusercontent.com/ugc/13106430351921752409/189D98477A7FC608F28D6D698671F2C168A44D0D/",
+      "previewSrc": "/maps/optimized/364443b4325e30ddc34c-preview.webp",
+      "originalSrc": "/maps/additions-&-changes-interloper.jpg"
     }
   },
   "must-read-information": {
     "pilgrim": {
-      "src": "/maps/must-read-information-pilgrim.jpg",
+      "src": "/maps/optimized/b5f6bec23f4c7acffd58.webp",
       "width": 203,
       "height": 71,
-      "source": "https://images.steamusercontent.com/ugc/37819645136699397/A3852BD01CBF6B2DB0B53788AF6ED3DE51D86DEF/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136699397/A3852BD01CBF6B2DB0B53788AF6ED3DE51D86DEF/",
+      "previewSrc": "/maps/optimized/b5f6bec23f4c7acffd58-preview.webp",
+      "originalSrc": "/maps/must-read-information-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/must-read-information-interloper.jpg",
+      "src": "/maps/optimized/615e6367136f85f7e399.webp",
       "width": 203,
       "height": 71,
-      "source": "https://images.steamusercontent.com/ugc/37819645136699505/62E803B466EDD012FC2503F6899738AF1D3C7DE9/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136699505/62E803B466EDD012FC2503F6899738AF1D3C7DE9/",
+      "previewSrc": "/maps/optimized/615e6367136f85f7e399-preview.webp",
+      "originalSrc": "/maps/must-read-information-interloper.jpg"
     }
   },
   "mystery-lake": {
     "pilgrim": {
-      "src": "/maps/mystery-lake-pilgrim.jpg",
+      "src": "/maps/optimized/d58c050a07f3c18dccac.webp",
       "width": 4235,
       "height": 4650,
-      "source": "https://images.steamusercontent.com/ugc/15476628118068146896/964E7DB3A8CF5601A727E12FAC153C8DEB0884AC/"
+      "source": "https://images.steamusercontent.com/ugc/15476628118068146896/964E7DB3A8CF5601A727E12FAC153C8DEB0884AC/",
+      "previewSrc": "/maps/optimized/d58c050a07f3c18dccac-preview.webp",
+      "originalSrc": "/maps/mystery-lake-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/mystery-lake-interloper.jpg",
+      "src": "/maps/optimized/c81ddf3d52526e31e0d5.webp",
       "width": 4235,
       "height": 4650,
-      "source": "https://images.steamusercontent.com/ugc/12181171108607855328/BB9FA07418F10BAE5DA9748A27FD9CB8E1C9AE02/"
+      "source": "https://images.steamusercontent.com/ugc/12181171108607855328/BB9FA07418F10BAE5DA9748A27FD9CB8E1C9AE02/",
+      "previewSrc": "/maps/optimized/c81ddf3d52526e31e0d5-preview.webp",
+      "originalSrc": "/maps/mystery-lake-interloper.jpg"
     }
   },
   "coastal-highway": {
     "pilgrim": {
-      "src": "/maps/coastal-highway-pilgrim.jpg",
+      "src": "/maps/optimized/2209339c8df57a0daaaa.webp",
       "width": 4028,
       "height": 3128,
-      "source": "https://images.steamusercontent.com/ugc/9516403236853107764/7C78444F11075F0CA7801155D89B604BEA222670/"
+      "source": "https://images.steamusercontent.com/ugc/9516403236853107764/7C78444F11075F0CA7801155D89B604BEA222670/",
+      "previewSrc": "/maps/optimized/2209339c8df57a0daaaa-preview.webp",
+      "originalSrc": "/maps/coastal-highway-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/coastal-highway-interloper.jpg",
+      "src": "/maps/optimized/5e0660d58cd7152e3b23.webp",
       "width": 4028,
       "height": 3128,
-      "source": "https://images.steamusercontent.com/ugc/9475295296023591018/8FA0642300D3597E7E2EB050545003226E35316F/"
+      "source": "https://images.steamusercontent.com/ugc/9475295296023591018/8FA0642300D3597E7E2EB050545003226E35316F/",
+      "previewSrc": "/maps/optimized/5e0660d58cd7152e3b23-preview.webp",
+      "originalSrc": "/maps/coastal-highway-interloper.jpg"
     }
   },
   "pleasant-valley": {
     "pilgrim": {
-      "src": "/maps/pleasant-valley-pilgrim.jpg",
+      "src": "/maps/optimized/57594f51f8e0c275f9b1.webp",
       "width": 4936,
       "height": 4864,
-      "source": "https://images.steamusercontent.com/ugc/9495851414846658845/BF9179F621AD5200996B7A4EE8F3BD7309B37470/"
+      "source": "https://images.steamusercontent.com/ugc/9495851414846658845/BF9179F621AD5200996B7A4EE8F3BD7309B37470/",
+      "previewSrc": "/maps/optimized/57594f51f8e0c275f9b1-preview.webp",
+      "originalSrc": "/maps/pleasant-valley-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/pleasant-valley-interloper.jpg",
+      "src": "/maps/optimized/a3d7aabf3212ec64d71b.webp",
       "width": 4936,
       "height": 4864,
-      "source": "https://images.steamusercontent.com/ugc/17407195001097129457/5D4565517DAE352E7A400A381BD9FE14DF5E54C9/"
+      "source": "https://images.steamusercontent.com/ugc/17407195001097129457/5D4565517DAE352E7A400A381BD9FE14DF5E54C9/",
+      "previewSrc": "/maps/optimized/a3d7aabf3212ec64d71b-preview.webp",
+      "originalSrc": "/maps/pleasant-valley-interloper.jpg"
     }
   },
   "desolation-point": {
     "pilgrim": {
-      "src": "/maps/desolation-point-pilgrim.jpg",
+      "src": "/maps/optimized/4b0b482456e8b175b430.webp",
       "width": 2490,
       "height": 2493,
-      "source": "https://images.steamusercontent.com/ugc/16057301526255972814/3A4FB4945D272F27EEBCEAFF483C452374C935CE/"
+      "source": "https://images.steamusercontent.com/ugc/16057301526255972814/3A4FB4945D272F27EEBCEAFF483C452374C935CE/",
+      "previewSrc": "/maps/optimized/4b0b482456e8b175b430-preview.webp",
+      "originalSrc": "/maps/desolation-point-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/desolation-point-interloper.jpg",
+      "src": "/maps/optimized/d3198e9127da3bbaf456.webp",
       "width": 2490,
       "height": 2493,
-      "source": "https://images.steamusercontent.com/ugc/17555198380887569827/EBDC7B329B52AF9B8F6F0A907F90EAAFFB8ED230/"
+      "source": "https://images.steamusercontent.com/ugc/17555198380887569827/EBDC7B329B52AF9B8F6F0A907F90EAAFFB8ED230/",
+      "previewSrc": "/maps/optimized/d3198e9127da3bbaf456-preview.webp",
+      "originalSrc": "/maps/desolation-point-interloper.jpg"
     }
   },
   "timberwolf-mountain": {
     "pilgrim": {
-      "src": "/maps/timberwolf-mountain-pilgrim.jpg",
+      "src": "/maps/optimized/3e56053801cb8e82b738.webp",
       "width": 3067,
       "height": 3648,
-      "source": "https://images.steamusercontent.com/ugc/18019470743317950368/FE3E7A2C5308EDFB4C43A5B8BB8230426A9D19A1/"
+      "source": "https://images.steamusercontent.com/ugc/18019470743317950368/FE3E7A2C5308EDFB4C43A5B8BB8230426A9D19A1/",
+      "previewSrc": "/maps/optimized/3e56053801cb8e82b738-preview.webp",
+      "originalSrc": "/maps/timberwolf-mountain-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/timberwolf-mountain-interloper.jpg",
+      "src": "/maps/optimized/13c33db94d48a2827926.webp",
       "width": 3067,
       "height": 3648,
-      "source": "https://images.steamusercontent.com/ugc/16015738267194102941/276C79D3CAE76AA15CBC3C55021299B5A7A13956/"
+      "source": "https://images.steamusercontent.com/ugc/16015738267194102941/276C79D3CAE76AA15CBC3C55021299B5A7A13956/",
+      "previewSrc": "/maps/optimized/13c33db94d48a2827926-preview.webp",
+      "originalSrc": "/maps/timberwolf-mountain-interloper.jpg"
     }
   },
   "forlorn-muskeg": {
     "pilgrim": {
-      "src": "/maps/forlorn-muskeg-pilgrim.jpg",
+      "src": "/maps/optimized/583b32be57902545280b.webp",
       "width": 3308,
       "height": 3894,
-      "source": "https://images.steamusercontent.com/ugc/15190933220557313885/B5B3BC2BABBF9E90336E0AF50BC7379E197410A9/"
+      "source": "https://images.steamusercontent.com/ugc/15190933220557313885/B5B3BC2BABBF9E90336E0AF50BC7379E197410A9/",
+      "previewSrc": "/maps/optimized/583b32be57902545280b-preview.webp",
+      "originalSrc": "/maps/forlorn-muskeg-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/forlorn-muskeg-interloper.jpg",
+      "src": "/maps/optimized/d70211dc06e1f45fa874.webp",
       "width": 3308,
       "height": 3894,
-      "source": "https://images.steamusercontent.com/ugc/13120278709304539605/D8F929B355A896EBCA2F5EA01775F6B56A395D5E/"
+      "source": "https://images.steamusercontent.com/ugc/13120278709304539605/D8F929B355A896EBCA2F5EA01775F6B56A395D5E/",
+      "previewSrc": "/maps/optimized/d70211dc06e1f45fa874-preview.webp",
+      "originalSrc": "/maps/forlorn-muskeg-interloper.jpg"
     }
   },
   "broken-railroad": {
     "pilgrim": {
-      "src": "/maps/broken-railroad-pilgrim.jpg",
+      "src": "/maps/optimized/dd58edfce32d3b669242.webp",
       "width": 2506,
       "height": 2424,
-      "source": "https://images.steamusercontent.com/ugc/37819645136703055/8674195A3C3098E9878C83512BF03B9CF9488AA9/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136703055/8674195A3C3098E9878C83512BF03B9CF9488AA9/",
+      "previewSrc": "/maps/optimized/dd58edfce32d3b669242-preview.webp",
+      "originalSrc": "/maps/broken-railroad-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/broken-railroad-interloper.jpg",
+      "src": "/maps/optimized/78e0b68333d4e85c6386.webp",
       "width": 2506,
       "height": 2424,
-      "source": "https://images.steamusercontent.com/ugc/37819645136703248/C355359C5487B23BF2BBD00EFE4CEA054573F085/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136703248/C355359C5487B23BF2BBD00EFE4CEA054573F085/",
+      "previewSrc": "/maps/optimized/78e0b68333d4e85c6386-preview.webp",
+      "originalSrc": "/maps/broken-railroad-interloper.jpg"
     }
   },
   "mountain-town": {
     "pilgrim": {
-      "src": "/maps/mountain-town-pilgrim.jpg",
+      "src": "/maps/optimized/22979b06595c45f0dd63.webp",
       "width": 3171,
       "height": 4235,
-      "source": "https://images.steamusercontent.com/ugc/17330490373698343471/CDCE98E29CE9BD56C91A8C7A290564ECD6757783/"
+      "source": "https://images.steamusercontent.com/ugc/17330490373698343471/CDCE98E29CE9BD56C91A8C7A290564ECD6757783/",
+      "previewSrc": "/maps/optimized/22979b06595c45f0dd63-preview.webp",
+      "originalSrc": "/maps/mountain-town-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/mountain-town-interloper.jpg",
+      "src": "/maps/optimized/e97f037e6f05660301f2.webp",
       "width": 3171,
       "height": 4235,
-      "source": "https://images.steamusercontent.com/ugc/16875759404303424817/0F18A56018496256E69826BF10AFA67B4B80F838/"
+      "source": "https://images.steamusercontent.com/ugc/16875759404303424817/0F18A56018496256E69826BF10AFA67B4B80F838/",
+      "previewSrc": "/maps/optimized/e97f037e6f05660301f2-preview.webp",
+      "originalSrc": "/maps/mountain-town-interloper.jpg"
     }
   },
   "hushed-river-valley": {
     "pilgrim": {
-      "src": "/maps/hushed-river-valley-pilgrim.jpg",
+      "src": "/maps/optimized/970490085d745f1c6a87.webp",
       "width": 3025,
       "height": 3326,
-      "source": "https://images.steamusercontent.com/ugc/11738172134438972729/9DB6EBD8279EB82FA9041ACF286CFF8F51C280D0/"
+      "source": "https://images.steamusercontent.com/ugc/11738172134438972729/9DB6EBD8279EB82FA9041ACF286CFF8F51C280D0/",
+      "previewSrc": "/maps/optimized/970490085d745f1c6a87-preview.webp",
+      "originalSrc": "/maps/hushed-river-valley-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/hushed-river-valley-interloper.jpg",
+      "src": "/maps/optimized/95dde63883c562373a15.webp",
       "width": 3025,
       "height": 3326,
-      "source": "https://images.steamusercontent.com/ugc/11458033074726588907/497E67C51FD94E97E14086322E2DFDBC5E8BA64F/"
+      "source": "https://images.steamusercontent.com/ugc/11458033074726588907/497E67C51FD94E97E14086322E2DFDBC5E8BA64F/",
+      "previewSrc": "/maps/optimized/95dde63883c562373a15-preview.webp",
+      "originalSrc": "/maps/hushed-river-valley-interloper.jpg"
     }
   },
   "bleak-inlet": {
     "pilgrim": {
-      "src": "/maps/bleak-inlet-pilgrim.jpg",
+      "src": "/maps/optimized/6c81c353e7aaabf16768.webp",
       "width": 3672,
       "height": 3974,
-      "source": "https://images.steamusercontent.com/ugc/15963475340427975657/8F8932D34BDB1AEECBD81F0DF0D4FF0A8F9B895F/"
+      "source": "https://images.steamusercontent.com/ugc/15963475340427975657/8F8932D34BDB1AEECBD81F0DF0D4FF0A8F9B895F/",
+      "previewSrc": "/maps/optimized/6c81c353e7aaabf16768-preview.webp",
+      "originalSrc": "/maps/bleak-inlet-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/bleak-inlet-interloper.jpg",
+      "src": "/maps/optimized/0d2f97a0053af8572e7e.webp",
       "width": 3672,
       "height": 3974,
-      "source": "https://images.steamusercontent.com/ugc/12747202571525077315/F6C8FEC4B25C2DCD7FF82D5D8E0DC38C35D43C68/"
+      "source": "https://images.steamusercontent.com/ugc/12747202571525077315/F6C8FEC4B25C2DCD7FF82D5D8E0DC38C35D43C68/",
+      "previewSrc": "/maps/optimized/0d2f97a0053af8572e7e-preview.webp",
+      "originalSrc": "/maps/bleak-inlet-interloper.jpg"
     }
   },
   "ash-canyon": {
     "pilgrim": {
-      "src": "/maps/ash-canyon-pilgrim.jpg",
+      "src": "/maps/optimized/cb0f7544c2dd488317b2.webp",
       "width": 3313,
       "height": 3917,
-      "source": "https://images.steamusercontent.com/ugc/12423718121825641694/1436C3EE25819AC99F2765E65FF87EB91FEE82C7/"
+      "source": "https://images.steamusercontent.com/ugc/12423718121825641694/1436C3EE25819AC99F2765E65FF87EB91FEE82C7/",
+      "previewSrc": "/maps/optimized/cb0f7544c2dd488317b2-preview.webp",
+      "originalSrc": "/maps/ash-canyon-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/ash-canyon-interloper.jpg",
+      "src": "/maps/optimized/90a4e07b0b47d322c33a.webp",
       "width": 3313,
       "height": 3917,
-      "source": "https://images.steamusercontent.com/ugc/11775972934425462577/06F5B6240C384475FA96DE6B3D656E9B51CB5D38/"
+      "source": "https://images.steamusercontent.com/ugc/11775972934425462577/06F5B6240C384475FA96DE6B3D656E9B51CB5D38/",
+      "previewSrc": "/maps/optimized/90a4e07b0b47d322c33a-preview.webp",
+      "originalSrc": "/maps/ash-canyon-interloper.jpg"
     }
   },
   "blackrock": {
     "pilgrim": {
-      "src": "/maps/blackrock-pilgrim.jpg",
+      "src": "/maps/optimized/0c059e7008e4e3a16d3a.webp",
       "width": 3870,
       "height": 4171,
-      "source": "https://images.steamusercontent.com/ugc/13725529750150141786/377C02F990FA45DF8EBAC15FFFA435457554996A/"
+      "source": "https://images.steamusercontent.com/ugc/13725529750150141786/377C02F990FA45DF8EBAC15FFFA435457554996A/",
+      "previewSrc": "/maps/optimized/0c059e7008e4e3a16d3a-preview.webp",
+      "originalSrc": "/maps/blackrock-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/blackrock-interloper.jpg",
+      "src": "/maps/optimized/d5697a080fd99c069021.webp",
       "width": 3870,
       "height": 4171,
-      "source": "https://images.steamusercontent.com/ugc/13819165643333898105/D35F9682041D607CC43CEF91ECBF28A57F5F2098/"
+      "source": "https://images.steamusercontent.com/ugc/13819165643333898105/D35F9682041D607CC43CEF91ECBF28A57F5F2098/",
+      "previewSrc": "/maps/optimized/d5697a080fd99c069021-preview.webp",
+      "originalSrc": "/maps/blackrock-interloper.jpg"
     }
   },
   "transfer-pass": {
     "pilgrim": {
-      "src": "/maps/transfer-pass-pilgrim.jpg",
+      "src": "/maps/optimized/c47f291f57a7052917d3.webp",
       "width": 1987,
       "height": 2146,
-      "source": "https://images.steamusercontent.com/ugc/37819645136731165/2F143B1F4452AE9F9688686307AEAFE77D64CD0C/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136731165/2F143B1F4452AE9F9688686307AEAFE77D64CD0C/",
+      "previewSrc": "/maps/optimized/c47f291f57a7052917d3-preview.webp",
+      "originalSrc": "/maps/transfer-pass-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/transfer-pass-interloper.jpg",
+      "src": "/maps/optimized/181f6f44d02a9730cba7.webp",
       "width": 1987,
       "height": 2146,
-      "source": "https://images.steamusercontent.com/ugc/37819645136731499/1A9515074C6E2DFE5960A3886C0534BB20265B41/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136731499/1A9515074C6E2DFE5960A3886C0534BB20265B41/",
+      "previewSrc": "/maps/optimized/181f6f44d02a9730cba7-preview.webp",
+      "originalSrc": "/maps/transfer-pass-interloper.jpg"
     }
   },
   "forsaken-airfield": {
     "pilgrim": {
-      "src": "/maps/forsaken-airfield-pilgrim.jpg",
+      "src": "/maps/optimized/7462a27bf83a44603286.webp",
       "width": 4715,
       "height": 5251,
-      "source": "https://images.steamusercontent.com/ugc/16913663260970933264/FB109BD04EA8ED996F248F237F7DDD07BB98CF4B/"
+      "source": "https://images.steamusercontent.com/ugc/16913663260970933264/FB109BD04EA8ED996F248F237F7DDD07BB98CF4B/",
+      "previewSrc": "/maps/optimized/7462a27bf83a44603286-preview.webp",
+      "originalSrc": "/maps/forsaken-airfield-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/forsaken-airfield-interloper.jpg",
+      "src": "/maps/optimized/2756981c4c4eac1e7767.webp",
       "width": 4715,
       "height": 5251,
-      "source": "https://images.steamusercontent.com/ugc/10851226945735149924/44743CB450B469D5596D322623AAC3DF36CAAC04/"
+      "source": "https://images.steamusercontent.com/ugc/10851226945735149924/44743CB450B469D5596D322623AAC3DF36CAAC04/",
+      "previewSrc": "/maps/optimized/2756981c4c4eac1e7767-preview.webp",
+      "originalSrc": "/maps/forsaken-airfield-interloper.jpg"
     }
   },
   "zone-of-contamination": {
     "pilgrim": {
-      "src": "/maps/zone-of-contamination-pilgrim.jpg",
+      "src": "/maps/optimized/89408865561b96b6a223.webp",
       "width": 3203,
       "height": 3803,
-      "source": "https://images.steamusercontent.com/ugc/10376660445325975268/BCF107D90B0B9E2D6D301731D0DFC0975F8E7EDB/"
+      "source": "https://images.steamusercontent.com/ugc/10376660445325975268/BCF107D90B0B9E2D6D301731D0DFC0975F8E7EDB/",
+      "previewSrc": "/maps/optimized/89408865561b96b6a223-preview.webp",
+      "originalSrc": "/maps/zone-of-contamination-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/zone-of-contamination-interloper.jpg",
+      "src": "/maps/optimized/02fdbf18a1dfa1897ed6.webp",
       "width": 3203,
       "height": 3803,
-      "source": "https://images.steamusercontent.com/ugc/10958718653805267230/55045BF44ACECE678A21417948002A17C0AC973A/"
+      "source": "https://images.steamusercontent.com/ugc/10958718653805267230/55045BF44ACECE678A21417948002A17C0AC973A/",
+      "previewSrc": "/maps/optimized/02fdbf18a1dfa1897ed6-preview.webp",
+      "originalSrc": "/maps/zone-of-contamination-interloper.jpg"
     }
   },
   "sundered-pass": {
     "pilgrim": {
-      "src": "/maps/sundered-pass-pilgrim.jpg",
+      "src": "/maps/optimized/f692656a5ae7ae199cc3.webp",
       "width": 4254,
       "height": 5006,
-      "source": "https://images.steamusercontent.com/ugc/13234845787225905708/3CCD158148CAF4F6E5651269D63AA378F2C7B361/"
+      "source": "https://images.steamusercontent.com/ugc/13234845787225905708/3CCD158148CAF4F6E5651269D63AA378F2C7B361/",
+      "previewSrc": "/maps/optimized/f692656a5ae7ae199cc3-preview.webp",
+      "originalSrc": "/maps/sundered-pass-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/sundered-pass-interloper.jpg",
+      "src": "/maps/optimized/849a98f91a8b96d1f0a9.webp",
       "width": 4254,
       "height": 5006,
-      "source": "https://images.steamusercontent.com/ugc/16979676319684412643/EE2D7A9F25D9742C4F9256678705F0A0B8286A48/"
+      "source": "https://images.steamusercontent.com/ugc/16979676319684412643/EE2D7A9F25D9742C4F9256678705F0A0B8286A48/",
+      "previewSrc": "/maps/optimized/849a98f91a8b96d1f0a9-preview.webp",
+      "originalSrc": "/maps/sundered-pass-interloper.jpg"
     }
   },
   "ravine": {
     "pilgrim": {
-      "src": "/maps/ravine-pilgrim.jpg",
+      "src": "/maps/optimized/74ffd73038d5b72b83eb.webp",
       "width": 2275,
       "height": 1436,
-      "source": "https://images.steamusercontent.com/ugc/37819645136730001/C7DC749F7E776CAA177FC3B5A0E679D01CF8B63C/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136730001/C7DC749F7E776CAA177FC3B5A0E679D01CF8B63C/",
+      "previewSrc": "/maps/optimized/74ffd73038d5b72b83eb-preview.webp",
+      "originalSrc": "/maps/ravine-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/ravine-interloper.jpg",
+      "src": "/maps/optimized/808145835431b8602e15.webp",
       "width": 2275,
       "height": 1436,
-      "source": "https://images.steamusercontent.com/ugc/37819645136730182/3961F5EF2C43A79B7F730CD52F7EE1B8554EB1C6/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136730182/3961F5EF2C43A79B7F730CD52F7EE1B8554EB1C6/",
+      "previewSrc": "/maps/optimized/808145835431b8602e15-preview.webp",
+      "originalSrc": "/maps/ravine-interloper.jpg"
     }
   },
   "winding-river-&-carter-hydro-dam": {
     "pilgrim": {
-      "src": "/maps/winding-river-&-carter-hydro-dam-pilgrim.jpg",
+      "src": "/maps/optimized/a440f5b10ecfe872867c.webp",
       "width": 3826,
       "height": 3375,
-      "source": "https://images.steamusercontent.com/ugc/37819645136732320/2F95CDD280AF1BD5D52072DD0B242519C099F433/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136732320/2F95CDD280AF1BD5D52072DD0B242519C099F433/",
+      "previewSrc": "/maps/optimized/a440f5b10ecfe872867c-preview.webp",
+      "originalSrc": "/maps/winding-river-&-carter-hydro-dam-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/winding-river-&-carter-hydro-dam-interloper.jpg",
+      "src": "/maps/optimized/83b238a6bafb3b581e3d.webp",
       "width": 3826,
       "height": 3375,
-      "source": "https://images.steamusercontent.com/ugc/37819645136732699/CD74A44711B35D34DC967262E7E90ECAA227B999/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136732699/CD74A44711B35D34DC967262E7E90ECAA227B999/",
+      "previewSrc": "/maps/optimized/83b238a6bafb3b581e3d-preview.webp",
+      "originalSrc": "/maps/winding-river-&-carter-hydro-dam-interloper.jpg"
     }
   },
   "crumbling-highway": {
     "pilgrim": {
-      "src": "/maps/crumbling-highway-pilgrim.jpg",
+      "src": "/maps/optimized/141f9aad0f32749cbd1b.webp",
       "width": 2097,
       "height": 1867,
-      "source": "https://images.steamusercontent.com/ugc/37819645136723139/6CF8012DCBEE7E4C21BAA1373D076B13C8D2E545/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136723139/6CF8012DCBEE7E4C21BAA1373D076B13C8D2E545/",
+      "previewSrc": "/maps/optimized/141f9aad0f32749cbd1b-preview.webp",
+      "originalSrc": "/maps/crumbling-highway-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/crumbling-highway-interloper.jpg",
+      "src": "/maps/optimized/141f9aad0f32749cbd1b.webp",
       "width": 2097,
       "height": 1867,
-      "source": "https://images.steamusercontent.com/ugc/37819645136723139/6CF8012DCBEE7E4C21BAA1373D076B13C8D2E545/"
+      "source": "https://images.steamusercontent.com/ugc/37819645136723139/6CF8012DCBEE7E4C21BAA1373D076B13C8D2E545/",
+      "previewSrc": "/maps/optimized/141f9aad0f32749cbd1b-preview.webp",
+      "originalSrc": "/maps/crumbling-highway-interloper.jpg"
     }
   },
   "keepers-pass": {
     "pilgrim": {
-      "src": "/maps/keepers-pass-pilgrim.jpg",
+      "src": "/maps/optimized/53c70c75277cd03251ee.webp",
       "width": 1859,
       "height": 2461,
-      "source": "https://images.steamusercontent.com/ugc/15159145128947408591/484B84DD777B5E0742837BB86857EAA524315342/"
+      "source": "https://images.steamusercontent.com/ugc/15159145128947408591/484B84DD777B5E0742837BB86857EAA524315342/",
+      "previewSrc": "/maps/optimized/53c70c75277cd03251ee-preview.webp",
+      "originalSrc": "/maps/keepers-pass-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/keepers-pass-interloper.jpg",
+      "src": "/maps/optimized/fad48738578ddf6392e8.webp",
       "width": 1859,
       "height": 2461,
-      "source": "https://images.steamusercontent.com/ugc/16055965560201475697/BF5677731E7CEA8A282819D01C96AB5486A6E478/"
+      "source": "https://images.steamusercontent.com/ugc/16055965560201475697/BF5677731E7CEA8A282819D01C96AB5486A6E478/",
+      "previewSrc": "/maps/optimized/fad48738578ddf6392e8-preview.webp",
+      "originalSrc": "/maps/keepers-pass-interloper.jpg"
     }
   },
   "far-range-branch-line": {
     "pilgrim": {
-      "src": "/maps/far-range-branch-line-pilgrim.jpg",
+      "src": "/maps/optimized/fc9c80c22a12c9c62634.webp",
       "width": 3194,
       "height": 1542,
-      "source": "https://images.steamusercontent.com/ugc/12967305776514005370/390463FA1E9F539BCB876BF25E3065276D75DED2/"
+      "source": "https://images.steamusercontent.com/ugc/12967305776514005370/390463FA1E9F539BCB876BF25E3065276D75DED2/",
+      "previewSrc": "/maps/optimized/fc9c80c22a12c9c62634-preview.webp",
+      "originalSrc": "/maps/far-range-branch-line-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/far-range-branch-line-interloper.jpg",
+      "src": "/maps/optimized/2e2e008a038c4c4e60a7.webp",
       "width": 3194,
       "height": 1542,
-      "source": "https://images.steamusercontent.com/ugc/10893453294679762817/2CC6706F93D63DD60EF48511CB98A2B27EF149A9/"
+      "source": "https://images.steamusercontent.com/ugc/10893453294679762817/2CC6706F93D63DD60EF48511CB98A2B27EF149A9/",
+      "previewSrc": "/maps/optimized/2e2e008a038c4c4e60a7-preview.webp",
+      "originalSrc": "/maps/far-range-branch-line-interloper.jpg"
     }
   },
   "langston-mine": {
     "pilgrim": {
-      "src": "/maps/langston-mine-pilgrim.jpg",
+      "src": "/maps/optimized/a4a1e5514031b678a5a6.webp",
       "width": 2048,
       "height": 2048,
-      "source": "https://images.steamusercontent.com/ugc/2298590116010964948/CD7B37AC9443188805A8F319C7F6808109379138/"
+      "source": "https://images.steamusercontent.com/ugc/2298590116010964948/CD7B37AC9443188805A8F319C7F6808109379138/",
+      "previewSrc": "/maps/optimized/a4a1e5514031b678a5a6-preview.webp",
+      "originalSrc": "/maps/langston-mine-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/langston-mine-interloper.jpg",
+      "src": "/maps/optimized/a4a1e5514031b678a5a6.webp",
       "width": 2048,
       "height": 2048,
-      "source": "https://images.steamusercontent.com/ugc/2298590116010964948/CD7B37AC9443188805A8F319C7F6808109379138/"
+      "source": "https://images.steamusercontent.com/ugc/2298590116010964948/CD7B37AC9443188805A8F319C7F6808109379138/",
+      "previewSrc": "/maps/optimized/a4a1e5514031b678a5a6-preview.webp",
+      "originalSrc": "/maps/langston-mine-interloper.jpg"
     }
   },
   "transition-cave": {
     "pilgrim": {
-      "src": "/maps/transition-cave-pilgrim.jpg",
+      "src": "/maps/optimized/5340bf62998f5852f84f.webp",
       "width": 2048,
       "height": 2048,
-      "source": "https://images.steamusercontent.com/ugc/2529416016912058547/B3B1BC18D40080358198B357C1F717A612BDC794/"
+      "source": "https://images.steamusercontent.com/ugc/2529416016912058547/B3B1BC18D40080358198B357C1F717A612BDC794/",
+      "previewSrc": "/maps/optimized/5340bf62998f5852f84f-preview.webp",
+      "originalSrc": "/maps/transition-cave-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/transition-cave-interloper.jpg",
+      "src": "/maps/optimized/5340bf62998f5852f84f.webp",
       "width": 2048,
       "height": 2048,
-      "source": "https://images.steamusercontent.com/ugc/2529416016912058547/B3B1BC18D40080358198B357C1F717A612BDC794/"
+      "source": "https://images.steamusercontent.com/ugc/2529416016912058547/B3B1BC18D40080358198B357C1F717A612BDC794/",
+      "previewSrc": "/maps/optimized/5340bf62998f5852f84f-preview.webp",
+      "originalSrc": "/maps/transition-cave-interloper.jpg"
     }
   },
   "game-world": {
     "pilgrim": {
-      "src": "/maps/world-overview.png",
+      "src": "/maps/optimized/4416fb2227fa95125f59.webp",
       "width": 4017,
       "height": 2048,
-      "source": "https://elektronixx.github.io/TLD-Interactive-Map/assets/img/homemap.png"
+      "source": "https://elektronixx.github.io/TLD-Interactive-Map/assets/img/homemap.png",
+      "previewSrc": "/maps/optimized/4416fb2227fa95125f59-preview.webp",
+      "originalSrc": "/maps/world-overview.png"
     },
     "interloper": {
-      "src": "/maps/world-overview.png",
+      "src": "/maps/optimized/4416fb2227fa95125f59.webp",
       "width": 4017,
       "height": 2048,
-      "source": "https://elektronixx.github.io/TLD-Interactive-Map/assets/img/homemap.png"
+      "source": "https://elektronixx.github.io/TLD-Interactive-Map/assets/img/homemap.png",
+      "previewSrc": "/maps/optimized/4416fb2227fa95125f59-preview.webp",
+      "originalSrc": "/maps/world-overview.png"
     }
   },
   "connections-between-regions": {
     "pilgrim": {
-      "src": "/maps/connections-between-regions-pilgrim.jpg",
+      "src": "/maps/optimized/b9afb2bcaf858327314f.webp",
       "width": 2048,
       "height": 1448,
-      "source": "https://images.steamusercontent.com/ugc/13036389424810677653/1424E21B04EADA5BE64A48B12FD4AB6C29FC76B4/"
+      "source": "https://images.steamusercontent.com/ugc/13036389424810677653/1424E21B04EADA5BE64A48B12FD4AB6C29FC76B4/",
+      "previewSrc": "/maps/optimized/b9afb2bcaf858327314f-preview.webp",
+      "originalSrc": "/maps/connections-between-regions-pilgrim.jpg"
     },
     "interloper": {
-      "src": "/maps/connections-between-regions-interloper.jpg",
+      "src": "/maps/optimized/b9afb2bcaf858327314f.webp",
       "width": 2048,
       "height": 1448,
-      "source": "https://images.steamusercontent.com/ugc/13036389424810677653/1424E21B04EADA5BE64A48B12FD4AB6C29FC76B4/"
+      "source": "https://images.steamusercontent.com/ugc/13036389424810677653/1424E21B04EADA5BE64A48B12FD4AB6C29FC76B4/",
+      "previewSrc": "/maps/optimized/b9afb2bcaf858327314f-preview.webp",
+      "originalSrc": "/maps/connections-between-regions-interloper.jpg"
     }
   }
 }

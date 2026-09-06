@@ -14,6 +14,7 @@ import { chatServices } from './chat';
 import { pruneChatMessages } from './chat-retention';
 import { accountSecurity } from './account-security';
 import { apiClientIP } from './proxy';
+import { appOrigin } from './origin';
 
 const directory = process.env.TLD_DATA_DIR ?? '.data';
 mkdirSync(directory, { recursive: true, mode: 0o700 });
@@ -26,7 +27,7 @@ const sqlite = new Database(`${directory}/atlas.sqlite`, { create: true });
 sqlite.run('PRAGMA journal_mode = WAL');
 sqlite.run('PRAGMA foreign_keys = ON');
 sqlite.run('PRAGMA busy_timeout = 5000');
-const origin = process.env.APP_ORIGIN ?? 'http://localhost:3000';
+const origin = appOrigin();
 const auth = betterAuth({
   database: sqlite,
   secret: process.env.BETTER_AUTH_SECRET ?? readFileSync(secretFile, 'utf8'),

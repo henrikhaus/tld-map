@@ -1,4 +1,5 @@
 'use client';
+import { responseJson } from './api-response';
 export class ChatError extends Error {
   constructor(
     message: string,
@@ -19,10 +20,14 @@ export async function chatApi<T>(
     ...options,
     headers,
   });
-  const data = (await response.json()) as {
+  const data = await responseJson<{
     error?: string;
     retryAfterMs?: number;
-  };
+  }>(response, 'Chat is temporarily unavailable. Please try again.').catch(
+    (error) => {
+      throw new ChatError(error.message, 0, response.status);
+    },
+  );
   if (!response.ok)
     throw new ChatError(
       data.error ?? 'Chat could not connect.',

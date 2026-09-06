@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { atlasSchema, initialAtlas, type AtlasState } from './model';
+import { responseJson } from './api-response';
 export type User = { id: string; name: string; username?: string };
 export const GUEST_KEY = 'tld-atlas:v1:guest';
 export function readLocal(key: string) {
@@ -26,7 +27,10 @@ export async function api<T = ApiResult>(
     ...options,
     headers,
   });
-  const body = (await response.json()) as ApiResult;
+  const body = await responseJson<ApiResult>(
+    response,
+    'The server is temporarily unavailable. Please try again.',
+  );
   if (!response.ok)
     throw new Error(
       (typeof body.error === 'object' ? body.error?.message : body.error) ??

@@ -66,6 +66,23 @@ volume, mounted at `/data`. There is no separate database service.
 
 ## Updates and data
 
+### If using a Dokploy Application with the Dockerfile
+
+The runtime image defaults to `https://tld.henhau.online`, including when Compose
+is not used. For another domain, set `SITE_URL` as both a build argument and a
+runtime environment variable. `APP_ORIGIN`, if set, overrides the runtime origin;
+remove a stale localhost value or set it to the same public origin. Trailing
+slashes are normalized. Startup logs print the resolved public origin. Never
+disable origin checks to fix a configuration mismatch.
+
+### Map assets
+
+Run `bun run maps:optimize` after replacing original map files. Commit the updated
+manifest and generated `public/maps/optimized` files. Maps first show a small
+preview, then load full-resolution WebP detail with unchanged coordinates. File
+names include a content hash, allowing year-long browser caching without stale
+maps after an update. Originals remain available in the repository.
+
 Push changes to `main`, then deploy again in Dokploy. You can enable Dokploy's
 Auto Deploy after the first successful deployment. Ordinary image rebuilds keep
 the named volume and therefore keep accounts, runs, chat, reports, admin access,

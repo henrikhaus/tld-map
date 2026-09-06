@@ -6,6 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "maps:optimize": "bun scripts/optimize-maps.ts",
     "dev": "bun scripts/dev.ts",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
@@ -56,6 +57,7 @@
     "oxfmt": "0.61.0",
     "oxlint": "1.76.0",
     "oxlint-tsgolint": "7.0.2001",
+    "sharp": "0.34.5",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vite": "8.0.13",
