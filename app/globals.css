@@ -2059,7 +2059,7 @@ h1 {
   border-radius: 51% 44% 53% 43%;
   transform: rotate(-12deg);
 }
-.set-choices button:hover {
+.set-choices button:hover:not(:disabled) {
   color: #fff;
   background: #ffffff0b;
 }

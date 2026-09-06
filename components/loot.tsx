@@ -31,11 +31,13 @@ import {
 } from '@/components/ui/table';
 import {
   blankLootComments,
+  candidateSets,
   excludedAlternative,
   loot,
   lootGroups,
   lootItems,
   lootRegions,
+  manualLootSets,
   regionToMap,
   selectedLootSets,
   toggleLootDiscovery,
@@ -108,7 +110,9 @@ export function LootSetPicker({
   run: Run;
   onUpdate: UpdateRun;
 }) {
-  const sets = selectedLootSets(run);
+  const sets = selectedLootSets(run),
+    possible = candidateSets(run.discoveries),
+    manual = manualLootSets(run);
   return (
     <fieldset className="loot-set-picker">
       <legend className="sr-only">Visible loot sets</legend>
@@ -119,11 +123,17 @@ export function LootSetPicker({
             key={set}
             aria-label={`Set ${set}`}
             aria-pressed={sets.includes(set)}
+            disabled={!possible.includes(set)}
+            title={
+              !possible.includes(set)
+                ? 'Ruled out by your loot discoveries'
+                : undefined
+            }
             className={sets.includes(set) ? 'chosen' : 'excluded'}
             onClick={() => {
-              const next = sets.includes(set)
-                ? sets.filter((value) => value !== set)
-                : [...sets, set].sort((a, b) => a - b);
+              const next = manual.includes(set)
+                ? manual.filter((value) => value !== set)
+                : [...manual, set].sort((a, b) => a - b);
               onUpdate({
                 lootSets: next,
                 lootSet: next.length === 1 ? next[0] : null,

@@ -296,9 +296,13 @@ export function runLoot(run: Run) {
 
 export const spawnGroups = rawLoot.spawnGroups;
 export const blankLootComments = rawLoot.additionalComments;
-export function selectedLootSets(run: Run): number[] {
+export function manualLootSets(run: Run): number[] {
   // Preserve earlier single-set choices; new runs begin with all sets selected.
   return run.lootSets ?? (run.lootSet === null ? [1, 2, 3, 4] : [run.lootSet]);
+}
+export function selectedLootSets(run: Run): number[] {
+  const possible = candidateSets(run.discoveries);
+  return manualLootSets(run).filter((set) => possible.includes(set));
 }
 export type LootGroup = { id: string; entries: string[]; sets: number[] };
 export function lootGroups(

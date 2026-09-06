@@ -78,6 +78,36 @@ describe('Workbook fidelity', () => {
   });
 });
 describe('Discovery-driven run sets', () => {
+  test('checking a location immediately filters visible sets and unchecking restores them', () => {
+    const entry = loot.find(
+      (entry) => entry.sets.length > 1 && entry.sets.length < 4,
+    )!;
+    const run = createRun();
+    const group = lootGroups(entry.region, entry.item, [1, 2, 3, 4]).find(
+      (group) => group.entries.includes(entry.id),
+    )!;
+    Object.assign(run, toggleLootDiscovery(run, entry.id, group));
+    expect(selectedLootSets(run)).toEqual(entry.sets);
+    Object.assign(run, toggleLootDiscovery(run, entry.id, group));
+    expect(selectedLootSets(run)).toEqual([1, 2, 3, 4]);
+  });
+  test('multiple discoveries intersect across regions and resetting preserves manual filters', () => {
+    const first = loot.find((entry) => entry.sets.length === 2)!;
+    const second = loot.find(
+      (entry) =>
+        entry.region !== first.region &&
+        entry.sets.includes(first.sets[0]) &&
+        !entry.sets.includes(first.sets[1]),
+    )!;
+    const run = createRun();
+    run.discoveries = [first.id, second.id];
+    expect(selectedLootSets(run)).toEqual([first.sets[0]]);
+    run.discoveries = [first.id];
+    expect(selectedLootSets(run)).toEqual(first.sets);
+    run.lootSets = [first.sets[0]];
+    run.discoveries = [];
+    expect(selectedLootSets(run)).toEqual([first.sets[0]]);
+  });
   test('unknown starts with all four candidates', () =>
     expect(candidateSets([])).toEqual([1, 2, 3, 4]));
   test('a find common to all sets does not eliminate a set', () => {
