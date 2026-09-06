@@ -1,0 +1,191 @@
+{
+  "width": 4017,
+  "height": 2048,
+  "links": [
+    {
+      "id": "forlorn-muskeg",
+      "name": "Forlorn Muskeg",
+      "x": 1896.5,
+      "y": 1363.0,
+      "width": 299,
+      "height": 62
+    },
+    {
+      "id": "broken-railroad",
+      "name": "Broken Railroad",
+      "x": 1470.0,
+      "y": 1297.5,
+      "width": 316,
+      "height": 63
+    },
+    {
+      "id": "mountain-town",
+      "name": "Mountain Town",
+      "x": 1731.5,
+      "y": 825.0,
+      "width": 289,
+      "height": 60
+    },
+    {
+      "id": "hushed-river-valley",
+      "name": "Hushed River Valley",
+      "x": 1587.0,
+      "y": 397.5,
+      "width": 364,
+      "height": 63
+    },
+    {
+      "id": "keepers-pass",
+      "name": "Keeper's Pass",
+      "x": 2353.5,
+      "y": 605.0,
+      "width": 263,
+      "height": 76
+    },
+    {
+      "id": "bleak-inlet",
+      "name": "Bleak Inlet",
+      "x": 2471.5,
+      "y": 1599.5,
+      "width": 227,
+      "height": 59
+    },
+    {
+      "id": "ravine",
+      "name": "The Ravine",
+      "x": 2560.5,
+      "y": 1253.0,
+      "width": 203,
+      "height": 82
+    },
+    {
+      "id": "winding-river-&-carter-hydro-dam",
+      "name": "Winding River",
+      "x": 2587.0,
+      "y": 1162.0,
+      "width": 256,
+      "height": 60
+    },
+    {
+      "id": "pleasant-valley",
+      "name": "Pleasant Valley",
+      "x": 2885.0,
+      "y": 766.5,
+      "width": 300,
+      "height": 63
+    },
+    {
+      "id": "timberwolf-mountain",
+      "name": "Timberwolf Mountain",
+      "x": 3125.5,
+      "y": 463.5,
+      "width": 375,
+      "height": 59
+    },
+    {
+      "id": "ash-canyon",
+      "name": "Ash Canyon",
+      "x": 3537.5,
+      "y": 330.0,
+      "width": 225,
+      "height": 60
+    },
+    {
+      "id": "coastal-highway",
+      "name": "Coastal Highway",
+      "x": 3051.5,
+      "y": 1382.5,
+      "width": 309,
+      "height": 61
+    },
+    {
+      "id": "crumbling-highway",
+      "name": "Crumbling Highway",
+      "x": 3207.0,
+      "y": 1843.5,
+      "width": 336,
+      "height": 77
+    },
+    {
+      "id": "desolation-point",
+      "name": "Desolation Point",
+      "x": 3382.5,
+      "y": 1579.5,
+      "width": 315,
+      "height": 63
+    },
+    {
+      "id": "mystery-lake",
+      "name": "Mystery Lake",
+      "x": 2149.0,
+      "y": 1036.5,
+      "width": 254,
+      "height": 63
+    },
+    {
+      "id": "blackrock",
+      "name": "Blackrock",
+      "x": 2722.5,
+      "y": 235.0,
+      "width": 211,
+      "height": 60
+    },
+    {
+      "id": "far-range-branch-line",
+      "name": "Far Range Branch Line",
+      "x": 934.0,
+      "y": 1629.0,
+      "width": 386,
+      "height": 76
+    },
+    {
+      "id": "transfer-pass",
+      "name": "Transfer Pass",
+      "x": 789.5,
+      "y": 1325.0,
+      "width": 269,
+      "height": 62
+    },
+    {
+      "id": "forsaken-airfield",
+      "name": "Forsaken Airfield",
+      "x": 358.5,
+      "y": 1409.5,
+      "width": 331,
+      "height": 61
+    },
+    {
+      "id": "sundered-pass",
+      "name": "Sundered Pass",
+      "x": 724.5,
+      "y": 976.5,
+      "width": 271,
+      "height": 63
+    },
+    {
+      "id": "zone-of-contamination",
+      "name": "Zone of Contamination",
+      "x": 953.5,
+      "y": 1222.5,
+      "width": 279,
+      "height": 93
+    },
+    {
+      "id": "transition-cave",
+      "name": "TFTFT Transitional Cave",
+      "x": 695.0,
+      "y": 1100.0,
+      "width": 170,
+      "height": 80
+    },
+    {
+      "id": "langston-mine",
+      "name": "Langston Mine",
+      "x": 967.5,
+      "y": 1067.5,
+      "width": 115,
+      "height": 65
+    }
+  ],
+  "hotspotSource": "https://elektronixx.github.io/TLD-Interactive-Map/"
+}

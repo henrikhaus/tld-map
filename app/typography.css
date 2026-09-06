@@ -1,0 +1,69 @@
+/* Final typography, shared by every visitor rather than browser preview settings. */
+:root .regions-panel,
+:root .regions-panel * {
+  font-family: var(--font-journal);
+}
+:root .regions-panel .region-row,
+:root .regions-panel .region-row > span,
+:root .regions-panel .sidebar-page-link,
+:root .regions-panel .world-link,
+:root .regions-panel .sidebar-account,
+:root .regions-panel .sidebar-account span,
+:root .regions-panel .sidebar-footer button,
+:root .regions-panel .sidebar-footer small {
+  font-family: var(--font-typewriter);
+}
+:root .regions-panel .run-name,
+:root .regions-panel .run-name-input {
+  font-family: var(--font-chalk);
+}
+.difficulty-dropdown [data-slot='dropdown-menu-item'] {
+  font-family: var(--font-journal);
+}
+
+/* Anchor each rule to the text's line box, including padding and scrolling. */
+.region-note textarea,
+.general-notes-page textarea {
+  font-family: var(--font-notes);
+  background-origin: content-box;
+  background-clip: content-box;
+  background-attachment: local;
+}
+.annotation-text,
+.annotation-text:hover,
+.inline-map-text,
+.text-preview {
+  font-family: var(--font-typewriter);
+}
+
+:root .loot-library,
+:root .loot-library *,
+:root .regional-loot,
+:root .regional-loot * {
+  font-family: var(--font-typewriter);
+}
+:root .loot-library .loot-library-heading h1 {
+  font-family: var(--font-chalk);
+}
+:root .loot-library .spawn-name,
+:root .regional-loot .spawn-name {
+  font-family: var(--font-notes);
+}
+:root .loot-library .loot-set-picker span,
+:root .loot-library .loot-set-picker button {
+  font-family: var(--font-journal);
+}
+
+:root .chat-room,
+:root .chat-room * {
+  font-family: var(--font-typewriter);
+}
+:root .chat-room .chat-message-line time {
+  font-family: var(--font-journal);
+}
+:root .chat-room .chat-heading h1 {
+  font-family: var(--font-chalk);
+}
+:root .regions-panel .sidebar-footer a {
+  font-family: var(--font-typewriter);
+}

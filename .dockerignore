@@ -1,0 +1,15 @@
+.git
+node_modules
+.data
+.env*
+dist
+.next
+.vinext
+.wrangler
+coverage
+*.tsbuildinfo
+.DS_Store
+outputs
+work
+**/atlas.sqlite*
+**/auth-secret
