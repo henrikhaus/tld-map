@@ -91,6 +91,11 @@ at `tld.henhau.online`. `bun run build:host` builds the Node frontend;
 Accounts use username/password sign-in and private, single-use recovery codes
 without requiring email. GitHub publishing does not deploy the site automatically.
 
+Sign-in sessions last 400 days and renew on qualifying activity once a day.
+Signing out or resetting a password invalidates sessions; clearing browser cookies
+also requires signing in again. Existing valid shorter sessions receive the longer
+expiry when refreshed after deployment.
+
 Guest saves are browser-specific. Account changes also have a browser cache; failed saves stay local and can be retried. Conflicts can be resolved by loading the account version, which keeps a local recovery copy under the account’s `:recovery` browser-storage key. Guest runs remain separately available after sign-out. Browser storage limits are surfaced as save errors.
 
 The included production gateway routes `/api` to the loopback-only Bun service.

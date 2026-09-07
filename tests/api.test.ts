@@ -233,11 +233,56 @@ describe('Private SQLite journals', () => {
       password: 'field-atlas-test-pass',
     });
     expect(valid.status).toBe(200);
+    expect(
+      valid.headers
+        .getSetCookie()
+        .some((cookie) => cookie.includes('Max-Age=34560000')),
+    ).toBe(true);
     const invalid = await request('/api/auth/sign-in/username', 'POST', {
       username: 'atlas_tester_a',
       password: 'wrong-password',
     });
     expect(invalid.status).toBe(401);
+  });
+  test('400-day sessions upgrade existing seven-day sessions and refresh their browser cookie', async () => {
+    const original = await request(
+      '/api/auth/get-session',
+      'GET',
+      undefined,
+      cookieA,
+    );
+    const data = (await original.json()) as { session: { id: string } };
+    const db = new Database(join(directory, 'atlas.sqlite'));
+    try {
+      const row = db
+        .query('SELECT expiresAt FROM session WHERE id=?')
+        .get(data.session.id) as { expiresAt: string | number };
+      const expiry = Date.now() + 7 * 86400_000;
+      db.run('UPDATE session SET expiresAt=? WHERE id=?', [
+        typeof row.expiresAt === 'number'
+          ? expiry
+          : new Date(expiry).toISOString(),
+        data.session.id,
+      ]);
+    } finally {
+      db.close();
+    }
+    const refreshed = await request(
+      '/api/auth/get-session',
+      'GET',
+      undefined,
+      cookieA,
+    );
+    expect(refreshed.status).toBe(200);
+    const next = (await refreshed.json()) as { session: { expiresAt: string } };
+    expect(
+      new Date(next.session.expiresAt).getTime() - Date.now(),
+    ).toBeGreaterThan(399 * 86400_000);
+    expect(
+      refreshed.headers
+        .getSetCookie()
+        .some((cookie) => cookie.includes('Max-Age=34560000')),
+    ).toBe(true);
   });
   test('signing out invalidates the session', async () => {
     expect(

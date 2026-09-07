@@ -33,6 +33,11 @@ const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET ?? readFileSync(secretFile, 'utf8'),
   baseURL: origin,
   trustedOrigins: [origin],
+  // Chromium caps persistent cookies at 400 days; active sessions renew daily.
+  session: {
+    expiresIn: 60 * 60 * 24 * 400,
+    updateAge: 60 * 60 * 24,
+  },
   emailAndPassword: { enabled: true, minPasswordLength: 8 },
   plugins: [username()],
   advanced: { ipAddress: { ipAddressHeaders: ['x-tld-client-ip'] } },
