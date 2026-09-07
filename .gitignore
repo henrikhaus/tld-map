@@ -41,4 +41,5 @@ next-env.d.ts
 /.data/
 **/atlas.sqlite*
 **/auth-secret
+**/recovery-secrets.json
 *.tsbuildinfo

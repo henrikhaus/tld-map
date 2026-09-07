@@ -68,6 +68,25 @@ volume, mounted at `/data`. There is no separate database service.
 
 ### If using a Dokploy Application with the Dockerfile
 
+**Add persistent storage before the first deployment.** In the application's
+mount settings, add a **Volume** named `tld-atlas-data` with mount path `/data`.
+Keep that same volume on every deployment. The Dockerfile alone does not attach
+a volume, and a Dokploy Application does not use the mounts in `compose.yaml`.
+Without it, replacing a container creates a new database and loses access to
+the previous accounts and saved runs.
+
+Confirm the running application has a volume mounted at `/data` before accepting
+registrations. If an existing deployment has no mount, back up and migrate its
+database **and auth secret before adding one**; mounting an empty volume hides
+the old container's data. Do not redeploy repeatedly after discovering an empty
+database: stopped containers may be the only remaining recovery source.
+
+If a recovered data directory includes `recovery-secrets.json`, keep it private
+and back it up with the database and `auth-secret`. It preserves recovery codes
+for accounts created under earlier auth keys; new codes use the current key.
+The backup script includes this file when present. Deploy the matching recovery
+support before using a consolidated database with this file.
+
 The runtime image defaults to `https://tld.henhau.online`, including when Compose
 is not used. For another domain, set `SITE_URL` as both a build argument and a
 runtime environment variable. `APP_ORIGIN`, if set, overrides the runtime origin;

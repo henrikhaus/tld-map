@@ -64,6 +64,16 @@ const security = accountSecurity(
   sqlite,
   process.env.BETTER_AUTH_SECRET ?? readFileSync(secretFile, 'utf8'),
   origin,
+  existsSync(`${directory}/recovery-secrets.json`)
+    ? z
+        .array(z.string().min(32).max(512))
+        .max(10)
+        .parse(
+          JSON.parse(
+            readFileSync(`${directory}/recovery-secrets.json`, 'utf8'),
+          ),
+        )
+    : [],
 );
 // Sweep while idle as well as on startup and before chat requests.
 setInterval(() => {

@@ -1,5 +1,6 @@
-import { afterAll, beforeAll, describe, expect, test } from 'bun:test';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { createHmac } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { initialAtlas } from '../lib/model';
@@ -44,6 +45,11 @@ async function register(username: string) {
   return cookies;
 }
 beforeAll(async () => {
+  writeFileSync(
+    join(directory, 'recovery-secrets.json'),
+    JSON.stringify(['previous-recovery-key-for-integration-tests']),
+    { mode: 0o600 },
+  );
   processHandle = Bun.spawn(['bun', 'server/index.ts'], {
     cwd: process.cwd(),
     env: {
@@ -1001,8 +1007,8 @@ describe('Public chat identities, reactions and moderation', () => {
 });
 
 describe('Account recovery and deletion', () => {
-  // Let Better Auth's signup burst window expire after the shared account fixtures.
-  beforeAll(
+  // Each scenario exercises several sign-ins; respect the real auth burst window.
+  beforeEach(
     () => new Promise<void>((resolve) => setTimeout(resolve, 11_000)),
     15_000,
   );
@@ -1024,6 +1030,56 @@ describe('Account recovery and deletion', () => {
     };
     return { ...data, cookie: cookies(response) };
   }
+  test('restored recovery codes accept an older key once, then rotate to the current key', async () => {
+    const account = await create('restored_survivor');
+    const db = new Database(join(directory, 'atlas.sqlite'));
+    const previousHash = createHmac(
+      'sha256',
+      'previous-recovery-key-for-integration-tests',
+    )
+      .update(account.recoveryCode.replaceAll('-', ''))
+      .digest('hex');
+    db.run('UPDATE account_recovery SET code_hash=? WHERE user_id=?', [
+      previousHash,
+      account.user.id,
+    ]);
+    db.close();
+    const recovered = await request('/api/account/recover', 'POST', {
+      username: 'restored_survivor',
+      code: account.recoveryCode,
+      newPassword: 'restored-account-password',
+    });
+    expect(recovered.status).toBe(200);
+    const replacement = (await recovered.json()) as { recoveryCode: string };
+    expect(replacement.recoveryCode).not.toBe(account.recoveryCode);
+    expect(
+      (
+        await request('/api/account/recover', 'POST', {
+          username: 'restored_survivor',
+          code: account.recoveryCode,
+          newPassword: 'should-not-be-accepted',
+        })
+      ).status,
+    ).toBe(400);
+    expect(
+      (
+        await request('/api/auth/sign-in/username', 'POST', {
+          username: 'restored_survivor',
+          password: 'restored-account-password',
+        })
+      ).status,
+    ).toBe(200);
+    expect(
+      (
+        await request('/api/account/recover', 'POST', {
+          username: 'restored_survivor',
+          code: replacement.recoveryCode,
+          newPassword: 'rotated-account-password',
+        })
+      ).status,
+    ).toBe(200);
+  });
+
   test('registration issues a private code; recovery rotates it and revokes every existing session', async () => {
     const account = await create('recovery_survivor');
     expect(account.recoveryCode).toMatch(/^(?:[A-F0-9]{8}-){5}[A-F0-9]{8}$/);

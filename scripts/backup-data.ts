@@ -1,5 +1,11 @@
 import { Database } from 'bun:sqlite';
-import { mkdirSync, readFileSync, writeFileSync, chmodSync } from 'node:fs';
+import {
+  mkdirSync,
+  readFileSync,
+  writeFileSync,
+  chmodSync,
+  existsSync,
+} from 'node:fs';
 import { resolve } from 'node:path';
 
 const destination = process.argv[2];
@@ -17,6 +23,12 @@ try {
   db.run('VACUUM INTO ?', [`${output}/atlas.sqlite`]);
   chmodSync(`${output}/atlas.sqlite`, 0o600);
   writeFileSync(`${output}/auth-secret`, secret, { mode: 0o600, flag: 'wx' });
+  if (existsSync(`${source}/recovery-secrets.json`))
+    writeFileSync(
+      `${output}/recovery-secrets.json`,
+      readFileSync(`${source}/recovery-secrets.json`),
+      { mode: 0o600, flag: 'wx' },
+    );
   console.log(
     `Private database snapshot and matching auth secret saved to ${output}`,
   );

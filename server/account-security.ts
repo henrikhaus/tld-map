@@ -17,7 +17,12 @@ const recoverySchema = z
   .strict();
 const json = (body: unknown, status = 200) =>
   Response.json(body, { status, headers: { 'Cache-Control': 'no-store' } });
-export function accountSecurity(db: Database, secret: string, origin: string) {
+export function accountSecurity(
+  db: Database,
+  secret: string,
+  origin: string,
+  previousRecoverySecrets: readonly string[] = [],
+) {
   if (
     !db
       .query('SELECT id FROM site_migrations WHERE id=?')
@@ -37,6 +42,12 @@ export function accountSecurity(db: Database, secret: string, origin: string) {
     })();
   const digest = (value: string) =>
     createHmac('sha256', secret).update(value).digest('hex');
+  // Database recovery may consolidate accounts created under different keys.
+  // Older keys verify recovery codes only; new codes use the current key.
+  const recoveryDigests = (value: string) =>
+    [secret, ...previousRecoverySecrets].map((key) =>
+      createHmac('sha256', key).update(value).digest('hex'),
+    );
   const normalize = (code: string) => code.replace(/[\s-]/g, '').toUpperCase();
   const makeCode = () =>
     randomBytes(24).toString('hex').toUpperCase().match(/.{8}/g)!.join('-');
@@ -114,8 +125,13 @@ export function accountSecurity(db: Database, secret: string, origin: string) {
         user_id: string;
         code_hash: string;
       } | null;
-      const supplied = digest(normalize(code));
-      if (!same(record?.code_hash ?? '0'.repeat(64), supplied) || !record)
+      const supplied = recoveryDigests(normalize(code));
+      if (
+        !supplied.some((hash) =>
+          same(record?.code_hash ?? '0'.repeat(64), hash),
+        ) ||
+        !record
+      )
         return json({ error: 'Username or recovery code is incorrect.' }, 400);
       const password = await hashPassword(newPassword);
       const replacement = db.transaction(() => {
@@ -124,7 +140,7 @@ export function accountSecurity(db: Database, secret: string, origin: string) {
           .get(record.user_id) as { code_hash: string } | null;
         if (
           !latest ||
-          !same(latest.code_hash, supplied) ||
+          !supplied.some((hash) => same(latest.code_hash, hash)) ||
           !credential(record.user_id)
         )
           return null;
