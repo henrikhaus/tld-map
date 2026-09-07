@@ -16,16 +16,18 @@ export function routeForPath(path: string): AtlasRoute | null {
   return null;
 }
 export function routeTitle(route: AtlasRoute) {
-  const title =
-    route.view === 'map'
-      ? `${route.mapId === 'game-world' ? 'World' : mapName(route.mapId!)} map`
-      : {
-          loot: 'Interloper loot tables',
-          notes: 'General notes',
-          chat: 'Campfire chat',
-          admin: 'Site admin',
-          privacy: 'Privacy',
-        }[route.view];
+  if (route.view === 'map')
+    return route.mapId === 'game-world'
+      ? 'The Long Dark Maps (TLD) — Interactive World & Region Maps'
+      : `${mapName(route.mapId!)} Map — The Long Dark (TLD)`;
+  if (route.view === 'loot')
+    return 'The Long Dark Interloper Loot Tables — All 4 Sets';
+  const title = {
+    notes: 'General notes',
+    chat: 'Campfire chat',
+    admin: 'Site admin',
+    privacy: 'Privacy',
+  }[route.view];
   return `${title} — The Long Dark`;
 }
 export const publicPaths = [

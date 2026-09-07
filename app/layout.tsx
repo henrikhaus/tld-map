@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Map — The Long Dark',
   description:
     'Your maps, field notes, and Interloper loot discoveries. A companion for every run on Great Bear Island.',
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
 };
 export default function RootLayout({
   children,

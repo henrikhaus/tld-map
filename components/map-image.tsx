@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- Pre-generated cartography retains fixed annotation coordinates. */
 import { useState } from 'react';
 import type { MapAsset } from '@/lib/model';
+import { mapImageDescription } from '@/lib/map-guides';
 
 export default function MapImage({
   asset,
@@ -16,6 +17,7 @@ export default function MapImage({
   const [previewFailed, setPreviewFailed] = useState(false);
   const [fullReady, setFullReady] = useState(false);
   const hasPreview = !!asset.previewSrc;
+  const description = mapImageDescription(asset);
   return (
     <>
       {hasPreview && (
@@ -23,7 +25,7 @@ export default function MapImage({
           src={asset.previewSrc}
           width={asset.width}
           height={asset.height}
-          alt="Detailed community region map for The Long Dark"
+          alt={description}
           draggable={false}
           decoding="async"
           fetchPriority="high"
@@ -40,7 +42,7 @@ export default function MapImage({
           src={asset.src}
           width={asset.width}
           height={asset.height}
-          alt="Detailed community region map for The Long Dark"
+          alt={description}
           draggable={false}
           decoding="async"
           fetchPriority={hasPreview ? 'low' : 'high'}

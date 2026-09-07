@@ -1,5 +1,9 @@
 # The Long Dark — Field Atlas
 
+**[Open The Long Dark interactive maps](https://tld.henhau.online/)** ·
+[Mystery Lake map](https://tld.henhau.online/maps/mystery-lake) ·
+[Interloper loot tables](https://tld.henhau.online/loot-tables)
+
 A local, map-first companion for The Long Dark, redesigned around private survival runs. The interface uses a black-and-white charcoal surface, locally hosted brush lettering and typewriter text, grain textures, chalk marks, and a narrow region journal. The Map page has no top headers: account controls, page navigation, runs, theme, and sources live in the sidebar to keep the cartography as large as possible. Maps use their original colors by default; the moon/sun toggle applies an optional CSS filter and remembers the preference on this device.
 
 ## Run locally
@@ -105,6 +109,9 @@ SQLite API to the generated Cloudflare runtime. See the deployment guide for
 backups, restoring local accounts and granting admin access on a fresh install.
 
 ## Checks
+
+Search indexing and the post-deployment checklist are covered in
+[the SEO guide](docs/SEO.md).
 
 ```sh
 bun run typecheck

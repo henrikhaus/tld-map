@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { routeForPath, routeTitle } from './routes';
 import { mapName } from './model';
+import { mapLandmarks } from './map-guides';
 // Set SITE_URL to the final origin when deploying; local previews remain local.
 export const siteUrl =
   process.env.SITE_URL ?? process.env.APP_ORIGIN ?? 'http://localhost:3000';
@@ -14,9 +15,11 @@ export function metadataForPath(path: string): Metadata {
   const title = routeTitle(route);
   const description =
     route.view === 'map'
-      ? `Explore The Long Dark ${route.mapId === 'game-world' ? 'world' : mapName(route.mapId!)} map. Add private notes, drawings and markers for each survival run.`
+      ? route.mapId === 'game-world'
+        ? 'Interactive The Long Dark maps (TLD) for Great Bear Island and the Far Territory. Explore every region, add private run notes and compare Interloper loot tables.'
+        : `Explore the ${mapName(route.mapId!)} map for The Long Dark (TLD). ${mapLandmarks[route.mapId!]?.length ? `Find ${mapLandmarks[route.mapId!].slice(0, 2).join(' and ')}. ` : ''}Plan routes with private notes and markers.`
       : route.view === 'loot'
-        ? 'Compare all four Interloper loot sets in The Long Dark. Track finds by region and item, including Misery runs.'
+        ? 'The Long Dark Interloper loot tables for all 4 sets. Compare item spawns by region, track finds and narrow down your loot set. Also supports Misery runs.'
         : route.view === 'privacy'
           ? 'How this unofficial The Long Dark map companion handles accounts, private runs, chat and site activity.'
           : 'Your private survival journal and community chat for The Long Dark.';
