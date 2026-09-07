@@ -4,6 +4,9 @@ A local, map-first companion for The Long Dark, redesigned around private surviv
 
 ## Run locally
 
+For **offline use on your own computer**, follow the [offline self-hosting
+guide](docs/OFFLINE.md). Initial setup needs internet; daily use does not.
+
 For **Dokploy + Hetzner hosting at `tld.henhau.online`**, use the included
 `compose.yaml` and follow [the deployment guide](docs/DEPLOYMENT.md).
 
@@ -37,6 +40,12 @@ The first launch creates `.data/atlas.sqlite` and a random `.data/auth-secret`. 
 | Tools                     | V: hand, D: draw, T: text, N: comment, M: marker, E: erase                |
 | Undo / redo               | Cmd/Ctrl+Z; Cmd/Ctrl+Shift+Z                                              |
 | Edit map text or a marker | Click it on the map                                                       |
+
+## License
+
+The application's source code and original documentation are available under the
+[MIT License](LICENSE). Maps, imported loot data, fonts, and other third-party
+material retain their existing rights; see [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Data and provenance
 
