@@ -46,6 +46,7 @@ import {
 import MapEditor, { type EditorHandle } from './map-editor';
 import { LootLibrary, RegionLoot } from './loot';
 import RunControls from './run-controls';
+import { addImportedRun } from '@/lib/run-transfer';
 import SiteReport from './site-report';
 import SiteAdmin from './site-admin';
 import ChatRoom from './chat-room';
@@ -377,6 +378,22 @@ function AtlasWorkspace({
       onSelect={selectRun}
       onCreate={newRun}
       onDelete={setDeleteRun}
+      onNotice={setMessage}
+      onImport={(imported) => {
+        let added = false;
+        update((current) => {
+          const next = addImportedRun(current, imported);
+          added = true;
+          return next;
+        });
+        if (!added)
+          throw new Error(
+            'Your journal is still loading. Try importing again in a moment.',
+          );
+        if (view === 'map') router.push(mapPath(imported.selectedMap));
+        setPendingLoot(null);
+        setMessage('Run imported as a separate copy.');
+      }}
     />
   );
   return (

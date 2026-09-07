@@ -37,11 +37,30 @@ docker start tld-map
 - Guest runs stay in that browser's storage. Account saves live in the local
   `tld-map-data` Docker volume. Keep that volume; deleting it deletes those saves.
 - Create a new local account if desired. Accounts and runs on `tld.henhau.online`
-  are separate and do not automatically sync to this installation.
+  are separate and do not automatically sync to this installation. You can
+  transfer individual runs using the import/export controls described below.
 - Chat is local to this installation; it does not connect to the public chat.
 - Source links and downloading future updates require internet.
 - The command binds to your own computer only. For hosting a public instance,
   follow [the deployment guide](DEPLOYMENT.md).
+
+## Take a run on a trip
+
+Before travelling, open the public site and select your run. Open the swap button
+beside the run name, then **Import / export → Export current run**. Save the
+`.tld-run.json` file on your laptop. In your local installation, use **Import /
+export → Import run as a copy** and select that file.
+
+The file contains the run's general and region notes, map drawings, text, comments,
+icons, loot progress, and saved map views. It does not contain account credentials,
+chat messages, or map images. Treat it as a private copy of your journal.
+
+After travelling, export the updated local run and import it on the public site
+while signed in. Each import adds a separate run with a fresh ID; matching names
+get an “imported” suffix. Existing runs remain unchanged. Files are limited to
+10 MB, and the usual 100-run limit applies.
+
+## Local administrator
 
 To make your existing local account the administrator, run:
 

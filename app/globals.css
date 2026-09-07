@@ -3248,6 +3248,12 @@ h1 {
   margin-top: 5px;
   border-top: 1px solid #444;
 }
+.journal-dropdown .run-transfer-option {
+  padding: 9px 7px;
+  color: #999;
+  font-size: 12px;
+  border-radius: 0;
+}
 .mobile-run-controls {
   display: none;
 }
