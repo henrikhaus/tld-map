@@ -8,6 +8,12 @@ import {
 } from 'lucide-react';
 import { api } from '@/lib/storage';
 import ChatModeration from './chat-moderation';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { mapName } from '@/lib/model';
 import type { AdminOverview, AdminUser, SiteReport } from '@/lib/site';
 const statuses = [
@@ -159,19 +165,41 @@ function Overview({ data }: { data: AdminOverview }) {
       <section className="admin-traffic">
         <h2>Daily page views</h2>
         <figure>
-          <div className="admin-bars">
-            {days.map((d) => (
-              <div
-                key={d.day}
-                title={`${d.day}: ${d.pageViews} page views, ${d.visits} visits`}
-              >
-                <span style={{ height: `${(d.pageViews / max) * 100}%` }} />
-                <span className="sr-only">
-                  {d.day}: {d.pageViews} views, {d.visits} visits.
-                </span>
-              </div>
-            ))}
-          </div>
+          <TooltipProvider delay={0}>
+            <div className="admin-bars">
+              {days.map((d) => (
+                <Tooltip key={d.day}>
+                  <TooltipTrigger
+                    type="button"
+                    className="admin-traffic-day"
+                    aria-label={`${d.day} UTC: ${d.pageViews} page views, ${d.visits} visits`}
+                  >
+                    <span
+                      className="admin-traffic-bar"
+                      style={{ height: `${(d.pageViews / max) * 100}%` }}
+                      aria-hidden="true"
+                    />
+                  </TooltipTrigger>
+                  <TooltipContent
+                    className="admin-traffic-tooltip"
+                    sideOffset={8}
+                  >
+                    <time dateTime={d.day}>{d.day} · UTC</time>
+                    <dl>
+                      <div>
+                        <dt>Visits</dt>
+                        <dd>{d.visits.toLocaleString()}</dd>
+                      </div>
+                      <div>
+                        <dt>Page views</dt>
+                        <dd>{d.pageViews.toLocaleString()}</dd>
+                      </div>
+                    </dl>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </div>
+          </TooltipProvider>
           <figcaption>
             <span>{days[0].day}</span>
             <span>{days.at(-1)!.day} · UTC</span>

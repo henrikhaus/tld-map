@@ -4432,14 +4432,23 @@ h1 {
   gap: 3px;
   align-items: stretch;
 }
-.admin-bars > div {
+.admin-traffic-day {
   flex: 1;
   min-width: 1px;
   display: flex;
   align-items: flex-end;
+  padding: 0;
   border-bottom: 1px solid #555;
 }
-.admin-bars > div > span:first-child {
+.admin-traffic-day:hover,
+.admin-traffic-day[data-popup-open] {
+  background: #ffffff0a;
+}
+.admin-traffic-day:focus-visible {
+  outline: 1px solid #ddd;
+  outline-offset: 2px;
+}
+.admin-traffic-bar {
   width: 100%;
   background: repeating-linear-gradient(
     115deg,
@@ -4448,6 +4457,37 @@ h1 {
     #777 2px,
     #777 3px
   );
+}
+.admin-traffic-day:hover .admin-traffic-bar,
+.admin-traffic-day[data-popup-open] .admin-traffic-bar {
+  filter: brightness(1.3);
+}
+.admin-traffic-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #555;
+  border-radius: 2px;
+  background: #171717;
+  color: #eee;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.admin-traffic-tooltip > svg {
+  display: none;
+}
+.admin-traffic-tooltip time {
+  color: #bbb;
+}
+.admin-traffic-tooltip dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+.admin-traffic-tooltip dt {
+  color: #aaa;
 }
 .admin-traffic figcaption {
   display: flex;
