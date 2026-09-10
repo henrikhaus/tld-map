@@ -20,6 +20,7 @@ rights to The Long Dark's name, artwork, or other game assets.
 
 - [Elektronixx's interactive atlas](https://elektronixx.github.io/TLD-Interactive-Map/)
 - [HokuOwl's region maps](https://steamcommunity.com/sharedfiles/filedetails/?id=3255435617)
+- [Krueger's maps](https://steamcommunity.com/sharedfiles/filedetails/?id=2899955301) — Far Territory transition cave, Langston Mine and region connections. Credits and source references printed on these maps are preserved.
 - [Bashrobe's Interloper loot tables](https://docs.google.com/spreadsheets/d/1sFqnIM9BPeI3ZitcDRekWeWEWfJL7BLyqyirBT3Y53E/edit)
 - [Bashrobe on YouTube](https://www.youtube.com/@Bashrobe)
 

@@ -76,6 +76,7 @@ Credits:
 
 - [Original interactive atlas by the GOAT Elektronixx](https://elektronixx.github.io/TLD-Interactive-Map/)
 - [Region maps by the GOAT HokuOwl](https://steamcommunity.com/sharedfiles/filedetails/?id=3255435617)
+- [Cave, mine & region connections maps by the GOAT Krueger](https://steamcommunity.com/sharedfiles/filedetails/?id=2899955301) — Far Territory transition cave, Langston Mine and region connections.
 - [Interloper Loot Tables by the GOAT Bashrobe](https://docs.google.com/spreadsheets/d/1sFqnIM9BPeI3ZitcDRekWeWEWfJL7BLyqyirBT3Y53E/edit?gid=585712023#gid=585712023) · [YouTube](https://www.youtube.com/@Bashrobe)
 - Made by henhau. Last updated 6 September 2026.
 - Hinterland Studio — The Long Dark

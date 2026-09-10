@@ -836,6 +836,14 @@ function AtlasWorkspace({
             >
               Region maps by the GOAT HokuOwl
             </a>
+            <a
+              href="https://steamcommunity.com/sharedfiles/filedetails/?id=2899955301"
+              target="_blank"
+              rel="noreferrer"
+              title="Far Territory transition cave, Langston Mine and region connections"
+            >
+              Cave, mine & region connections maps by the GOAT Krueger
+            </a>
             <div className="source-credit-row">
               <a
                 href="https://docs.google.com/spreadsheets/d/1sFqnIM9BPeI3ZitcDRekWeWEWfJL7BLyqyirBT3Y53E/edit?gid=585712023#gid=585712023"
