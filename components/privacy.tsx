@@ -47,15 +47,17 @@ export default function Privacy({ onContact }: { onContact: () => void }) {
         addresses, and hosting logs may record requests. Issue and feature
         reports are visible to henhau and include the content and optional reply
         address you submit. Reports remain until removed or, for reports
-        attached to an account, until account deletion.
+        attached to an account, until account deletion. Status updates are shown
+        privately to the submitting account. New guest reports use a browser
+        cookie to deliver updates on the same device.
       </p>
       <h2>Cookies and local storage</h2>
       <p>
-        The app uses cookies for sign-in, anonymous chat and visit counting.
-        Browser storage holds runs, pending saves, recovery copies of
-        conflicting run edits, and display preferences. Fonts and map assets are
-        served with the app. This version does not load advertising or
-        third-party analytics scripts.
+        The app uses cookies for sign-in, anonymous chat, request updates and
+        visit counting. Browser storage holds runs, pending saves, recovery
+        copies of conflicting run edits, and display preferences. Fonts and map
+        assets are served with the app. This version does not load advertising
+        or third-party analytics scripts.
       </p>
       <h2>Questions or data requests</h2>
       <p>

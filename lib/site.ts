@@ -72,3 +72,9 @@ export type AdminUser = {
   lastSeen: number | null;
   runs: number;
 };
+export type ReportNotification = {
+  id: string;
+  kind: 'issue' | 'feature';
+  title: string;
+  status: z.infer<typeof reportStatus>;
+};

@@ -1,5 +1,6 @@
 import type { Database } from 'bun:sqlite';
 import { readFileSync } from 'node:fs';
+import { createHash, randomBytes } from 'node:crypto';
 import { z } from 'zod';
 import { reportSchema, reportUpdateSchema, trafficSchema } from '../lib/site';
 
@@ -16,24 +17,32 @@ export function siteServices(db: Database, origin: string) {
   db.run(
     'CREATE TABLE IF NOT EXISTS site_migrations (id TEXT PRIMARY KEY, applied_at INTEGER NOT NULL)',
   );
-  if (
-    !db
-      .query('SELECT id FROM site_migrations WHERE id = ?')
-      .get('001-site-admin')
-  ) {
-    db.transaction(() => {
-      db.run(
-        readFileSync(
-          new URL('./migrations/001-site-admin.sql', import.meta.url),
-          'utf8',
-        ),
-      );
-      db.run('INSERT INTO site_migrations VALUES (?, ?)', [
-        '001-site-admin',
-        Date.now(),
-      ]);
-    })();
+  for (const migration of ['001-site-admin', '002-report-notifications']) {
+    if (
+      !db.query('SELECT id FROM site_migrations WHERE id = ?').get(migration)
+    ) {
+      db.transaction(() => {
+        db.run(
+          readFileSync(
+            new URL(`./migrations/${migration}.sql`, import.meta.url),
+            'utf8',
+          ),
+        );
+        db.run('INSERT INTO site_migrations VALUES (?, ?)', [
+          migration,
+          Date.now(),
+        ]);
+      })();
+    }
   }
+  const guestToken = (request: Request) =>
+    request.headers
+      .get('cookie')
+      ?.match(/(?:^|;\s*)tld_report_owner=([a-f0-9]{64})(?:;|$)/)?.[1];
+  const ownerHash = (token: string) =>
+    createHash('sha256').update(token).digest('hex');
+  const ownerWhere =
+    '(r.user_id = ? OR (r.user_id IS NULL AND r.guest_owner_hash = ?))';
   const count = (sql: string, ...params: (number | string)[]) =>
     (db.query(sql).get(...params) as { n: number }).n;
   let lastPrune = 0;
@@ -78,6 +87,31 @@ export function siteServices(db: Database, origin: string) {
     const session = await getSession();
     if (path === '/api/site/me' && request.method === 'GET')
       return json({ admin: isAdmin(session) });
+    if (path === '/api/site/report-notifications') {
+      const token = guestToken(request);
+      const owner = [session?.user.id ?? null, token ? ownerHash(token) : null];
+      if (request.method === 'GET')
+        return json({
+          notifications: db
+            .query(
+              `SELECT n.id,r.kind,r.title,n.status FROM site_report_notifications n JOIN site_reports r ON r.id=n.report_id WHERE ${ownerWhere} ORDER BY n.created_at,n.id LIMIT 50`,
+            )
+            .all(...owner),
+        });
+      if (request.method === 'POST') {
+        const parsed = z
+          .object({ id: z.uuid() })
+          .safeParse(await request.json());
+        if (!parsed.success)
+          return json({ error: 'Invalid notification' }, 400);
+        // Acknowledge only this revision, so a newer status cannot be lost.
+        db.run(
+          `DELETE FROM site_report_notifications WHERE id=? AND report_id IN (SELECT r.id FROM site_reports r WHERE ${ownerWhere})`,
+          [parsed.data.id, ...owner],
+        );
+        return json({ ok: true });
+      }
+    }
     if (path === '/api/site/reports' && request.method === 'POST') {
       const parsed = reportSchema.safeParse(await request.json());
       if (!parsed.success)
@@ -106,8 +140,11 @@ export function siteServices(db: Database, origin: string) {
           429,
         );
       const now = Date.now();
+      const token = session
+        ? null
+        : (guestToken(request) ?? randomBytes(32).toString('hex'));
       db.run(
-        'INSERT INTO site_reports (id,kind,title,body,contact,user_id,page,map_id,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)',
+        'INSERT INTO site_reports (id,kind,title,body,contact,user_id,page,map_id,created_at,updated_at,guest_owner_hash) VALUES (?,?,?,?,?,?,?,?,?,?,?)',
         [
           report.id,
           report.kind,
@@ -119,9 +156,18 @@ export function siteServices(db: Database, origin: string) {
           report.mapId,
           now,
           now,
+          token ? ownerHash(token) : null,
         ],
       );
-      return json({ id: report.id }, 201);
+      return json(
+        { id: report.id },
+        201,
+        token
+          ? {
+              'Set-Cookie': `tld_report_owner=${token}; Path=/api/site; HttpOnly; SameSite=Strict; Max-Age=34560000${origin.startsWith('https:') ? '; Secure' : ''}`,
+            }
+          : undefined,
+      );
     }
     if (path === '/api/site/traffic' && request.method === 'POST') {
       const parsed = trafficSchema.safeParse(await request.json());
@@ -311,11 +357,24 @@ export function siteServices(db: Database, origin: string) {
     if (reportId && request.method === 'PATCH') {
       const parsed = reportUpdateSchema.safeParse(await request.json());
       if (!parsed.success) return json({ error: 'Invalid report update' }, 400);
-      const result = db
-        .query(
-          'UPDATE site_reports SET status=?,admin_notes=?,updated_at=? WHERE id=? RETURNING id',
-        )
-        .get(parsed.data.status, parsed.data.adminNotes, Date.now(), reportId);
+      const result = db.transaction(() => {
+        const previous = db
+          .query('SELECT status FROM site_reports WHERE id=?')
+          .get(reportId) as { status: string } | null;
+        if (!previous) return null;
+        const now = Date.now();
+        if (previous.status !== parsed.data.status) {
+          db.run(
+            `INSERT INTO site_report_notifications (id,report_id,status,created_at) VALUES (?,?,?,?) ON CONFLICT(report_id) DO UPDATE SET id=excluded.id,status=excluded.status,created_at=excluded.created_at`,
+            [crypto.randomUUID(), reportId, parsed.data.status, now],
+          );
+        }
+        return db
+          .query(
+            'UPDATE site_reports SET status=?,admin_notes=?,updated_at=? WHERE id=? RETURNING id',
+          )
+          .get(parsed.data.status, parsed.data.adminNotes, now, reportId);
+      })();
       return result
         ? json({ ok: true })
         : json({ error: 'Report not found' }, 404);

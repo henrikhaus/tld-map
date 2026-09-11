@@ -1397,6 +1397,31 @@ h1 {
     animation: none !important;
   }
 }
+.report-update-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 88px;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: min(440px, calc(100vw - 40px));
+  padding: 16px;
+  background: #1a1a1a url('/textures/charcoal.svg');
+  color: #ddd;
+  box-shadow: 0 4px 18px #0006;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.report-update-toast button {
+  flex-shrink: 0;
+  padding: 3px;
+  color: #aaa;
+}
+.report-update-toast button:hover {
+  color: #fff;
+}
 .global-message {
   position: fixed;
   bottom: 48px;

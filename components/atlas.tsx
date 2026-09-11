@@ -48,6 +48,7 @@ import { LootLibrary, RegionLoot } from './loot';
 import RunControls from './run-controls';
 import { addImportedRun } from '@/lib/run-transfer';
 import SiteReport from './site-report';
+import ReportNotifications from './report-notifications';
 import SiteAdmin from './site-admin';
 import ChatRoom from './chat-room';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -697,6 +698,7 @@ function AtlasWorkspace({
           />
         )}
       </SidebarProvider>
+      {authReady && <ReportNotifications />}
       {(warning || message || error) && (
         <output className="global-message">
           <span>

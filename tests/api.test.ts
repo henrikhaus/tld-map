@@ -1,4 +1,11 @@
-import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
+import {
+  afterAll,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  test,
+} from 'bun:test';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { createHmac } from 'node:crypto';
 import { tmpdir } from 'node:os';
@@ -1283,7 +1290,7 @@ describe('Account recovery and deletion', () => {
       );
       db.run("INSERT INTO chat_reactions VALUES (?,?,'👍')", [message, person]);
       db.run(
-        "INSERT INTO site_reports VALUES (?,'issue','Private report','Private report body','private@example.com',?,'map',NULL,'new','',?,?)",
+        "INSERT INTO site_reports (id,kind,title,body,contact,user_id,page,map_id,status,admin_notes,created_at,updated_at) VALUES (?,'issue','Private report','Private report body','private@example.com',?,'map',NULL,'new','',?,?)",
         [crypto.randomUUID(), account.user.id, Date.now(), Date.now()],
       );
       expect(
