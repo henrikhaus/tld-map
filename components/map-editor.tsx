@@ -10,6 +10,7 @@ import {
 } from 'react';
 import {
   Hand,
+  X,
   MessageSquare,
   Pencil,
   Type,
@@ -85,6 +86,7 @@ export const markerIcons = {
   supplies: Package,
   destination: Flag,
   hunting: Footprints,
+  cross: X,
 };
 const toolConfig = [
   { id: 'hand', label: 'Pan map', key: 'V', icon: Hand },
@@ -92,6 +94,7 @@ const toolConfig = [
   { id: 'text', label: 'Write on map', key: 'T', icon: Type },
   { id: 'comment', label: 'Place a comment', key: 'N', icon: MessageSquare },
   { id: 'marker', label: 'Place an icon', key: 'M', icon: MapPin },
+  { id: 'cross', label: 'Stamp an X', key: 'X', icon: X },
   { id: 'erase', label: 'Erase an annotation', key: 'E', icon: Eraser },
 ] as const;
 const instruction: Record<Tool, string> = {
@@ -100,6 +103,7 @@ const instruction: Record<Tool, string> = {
   text: 'CLICK THE MAP TO WRITE',
   comment: 'CLICK THE MAP TO LEAVE A COMMENT',
   marker: 'CLICK A POINT TO PLACE AN ICON',
+  cross: 'CLICK TO STAMP AN X · DRAG TO PAN',
   erase: 'CLICK A HIGHLIGHTED ANNOTATION TO ERASE',
 };
 export function ToolButton({
@@ -477,7 +481,7 @@ export default function MapEditor({
       canvas.current!.querySelectorAll<HTMLElement>('[data-annotation-id]'),
     ).map((element) => {
       const bounds = (
-        element.querySelector('button') ?? element
+        element.querySelector('button, .annotation-cross') ?? element
       ).getBoundingClientRect();
       return {
         id: element.dataset.annotationId!,
@@ -610,7 +614,12 @@ export default function MapEditor({
         width: brush / view.scale,
         opacity,
       });
-    } else if (tool === 'text' || tool === 'comment' || tool === 'marker') {
+    } else if (
+      tool === 'text' ||
+      tool === 'comment' ||
+      tool === 'marker' ||
+      tool === 'cross'
+    ) {
       // Mount the focused input after pointer-up so the initiating click cannot blur it.
       event.preventDefault();
       event.currentTarget.setPointerCapture(event.pointerId);
@@ -618,21 +627,29 @@ export default function MapEditor({
       drag.current = {
         mode: 'place',
         label:
-          tool === 'marker'
-            ? {
-                ...base,
-                type: 'marker',
-                circle: iconCircle,
-                icon: marker,
-                title: pendingLoot
-                  ? `${pendingLoot.item} · ${pendingLoot.location}`
-                  : '',
-                text: pendingLoot
-                  ? `Loot reference: ${pendingLoot.region}. Listed in sets ${pendingLoot.sets.join(', ')}.`
-                  : '',
-                ...(pendingLoot ? { lootId: pendingLoot.id } : {}),
-              }
-            : { ...base, type: tool, title: '', text: '', shadow: textShadow },
+          tool === 'cross'
+            ? { ...base, type: 'marker', icon: 'cross' }
+            : tool === 'marker'
+              ? {
+                  ...base,
+                  type: 'marker',
+                  circle: iconCircle,
+                  icon: marker,
+                  title: pendingLoot
+                    ? `${pendingLoot.item} · ${pendingLoot.location}`
+                    : '',
+                  text: pendingLoot
+                    ? `Loot reference: ${pendingLoot.region}. Listed in sets ${pendingLoot.sets.join(', ')}.`
+                    : '',
+                  ...(pendingLoot ? { lootId: pendingLoot.id } : {}),
+                }
+              : {
+                  ...base,
+                  type: tool,
+                  title: '',
+                  text: '',
+                  shadow: textShadow,
+                },
         x: event.clientX,
         y: event.clientY,
         points: [],
@@ -775,6 +792,7 @@ export default function MapEditor({
       commit(current.current.filter((x) => x.id !== a.id));
       return;
     }
+    if (a.type === 'marker' && a.icon === 'cross') return;
     if (a.type === 'text') setTool('text');
     setEditing(a);
   }
@@ -925,6 +943,18 @@ export default function MapEditor({
                     >
                       {a.text}
                     </button>
+                  ) : a.type === 'marker' && a.icon === 'cross' ? (
+                    <span
+                      className="annotation-cross"
+                      style={{ color: a.color }}
+                    >
+                      <X
+                        size={24}
+                        strokeWidth={3}
+                        aria-label="X mark"
+                        aria-hidden={false}
+                      />
+                    </span>
                   ) : (
                     <Tooltip
                       open={tool === 'erase' || panning ? false : undefined}
@@ -1095,6 +1125,10 @@ export default function MapEditor({
                   size={24}
                   fill="currentColor"
                 />
+              ) : tool === 'cross' ? (
+                <span className="icon-preview">
+                  <X size={24} strokeWidth={3} />
+                </span>
               ) : (
                 <span
                   className={`icon-preview ${iconCircle ? 'marker-circle' : ''}`}
@@ -1179,7 +1213,7 @@ export default function MapEditor({
             </ToolButton>
           )}
         </div>
-        {['draw', 'text', 'marker', 'comment'].includes(tool) && (
+        {['draw', 'text', 'marker', 'comment', 'cross'].includes(tool) && (
           <div
             className="tool-options"
             data-controls
@@ -1289,20 +1323,22 @@ export default function MapEditor({
             )}
             {tool === 'marker' && (
               <div className="flex gap-1">
-                {markerKinds.map((kind) => {
-                  const Icon = markerIcons[kind];
-                  return (
-                    <button
-                      key={kind}
-                      aria-label={kind}
-                      title={kind}
-                      className={`marker-type ${marker === kind ? 'active' : ''}`}
-                      onClick={() => setMarker(kind)}
-                    >
-                      <Icon fill="currentColor" strokeWidth={1.7} />
-                    </button>
-                  );
-                })}
+                {markerKinds
+                  .filter((kind) => kind !== 'cross')
+                  .map((kind) => {
+                    const Icon = markerIcons[kind];
+                    return (
+                      <button
+                        key={kind}
+                        aria-label={kind}
+                        title={kind}
+                        className={`marker-type ${marker === kind ? 'active' : ''}`}
+                        onClick={() => setMarker(kind)}
+                      >
+                        <Icon fill="currentColor" strokeWidth={1.7} />
+                      </button>
+                    );
+                  })}
               </div>
             )}
           </div>

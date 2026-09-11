@@ -4061,6 +4061,13 @@ h1 {
   width: 24px;
   height: 24px;
 }
+.annotation-cross {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  transform: translate(-50%, -50%);
+}
 .annotation-marker.marker-circle,
 .icon-preview.marker-circle {
   background: #111;
@@ -5076,7 +5083,8 @@ h1 {
   box-shadow: 0 0 3px #ffffff20;
 }
 
-.map-annotation.erase-target > button {
+.map-annotation.erase-target > button,
+.map-annotation.erase-target > .annotation-cross {
   outline: 1px dashed #eee;
   outline-offset: 4px;
   background-color: #ffffff20;

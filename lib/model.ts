@@ -18,6 +18,7 @@ export const markerKinds = [
   'supplies',
   'destination',
   'hunting',
+  'cross',
 ] as const;
 export const pointSchema = z.object({
   x: z.number().min(0).max(30000),
@@ -114,7 +115,14 @@ export const atlasSchema = z
 export type Annotation = z.infer<typeof annotationSchema>;
 export type Run = z.infer<typeof runSchema>;
 export type AtlasState = z.infer<typeof atlasSchema>;
-export type Tool = 'hand' | 'draw' | 'text' | 'marker' | 'comment' | 'erase';
+export type Tool =
+  | 'hand'
+  | 'draw'
+  | 'text'
+  | 'marker'
+  | 'comment'
+  | 'cross'
+  | 'erase';
 export type Point = z.infer<typeof pointSchema>;
 export type LootEntry = (typeof rawLoot.entries)[number];
 export type MapAsset = {
