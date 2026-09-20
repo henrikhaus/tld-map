@@ -516,6 +516,16 @@ function AtlasWorkspace({
                 );
               })}
               <div className="sidebar-footer">
+                <a
+                  className="text-button"
+                  href="https://tldguessr.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="A The Long Dark GeoGuessr game by henhau (opens in a new tab)"
+                >
+                  Play TLDGuessr
+                  <ArrowUpRight size={13} />
+                </a>
                 {isAdmin && (
                   <button
                     className={`text-button ${view === 'admin' ? 'selected' : ''}`}
